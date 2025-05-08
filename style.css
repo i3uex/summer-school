@@ -1,0 +1,173 @@
+body {
+    font-family: 'Inter', sans-serif; /* Use Inter font */
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+.hero {
+    /* Placeholder background - replace with a relevant, high-quality image */
+    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('https://placehold.co/1920x700/667eea/ffffff?text=University+Campus+or+Abstract+Tech') no-repeat center center;
+    background-size: cover;
+    color: white;
+    padding: 120px 0; /* Increased padding */
+    text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+}
+.hero h1 {
+    font-size: 2.8rem; /* Responsive font size */
+    font-weight: 700; /* Bolder */
+    margin-bottom: 0.5em;
+}
+.hero p {
+    font-size: 1.2rem;
+    font-weight: 300;
+}
+.section-title {
+    text-align: center;
+    margin-top: 3rem; /* Add space above titles */
+    margin-bottom: 3rem; /* Consistent spacing */
+    font-weight: 700; /* Bolder section titles */
+    font-size: 2.2rem;
+    color: #343a40; /* Darker color */
+    position: relative;
+    padding-bottom: 10px;
+}
+/* Underline effect for section titles */
+.section-title::after {
+    content: '';
+    position: absolute;
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #0d6efd; /* Bootstrap primary */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.card {
+    border: none; /* Remove default card border */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    border-radius: 10px; /* Rounded corners */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+    height: 100%; /* Ensure cards in a row have same height */
+}
+.card:hover {
+    transform: translateY(-5px); /* Lift card on hover */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+.speaker-img {
+    width: 130px; /* Slightly smaller */
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular images */
+    margin: 15px auto; /* Center image */
+    display: block;
+    border: 3px solid #e9ecef; /* Light border */
+}
+footer {
+    background-color: #343a40; /* Dark footer */
+    color: #f8f9fa; /* Light text */
+    padding: 40px 0;
+    margin-top: 50px;
+}
+footer a {
+    color: #adb5bd; /* Lighter link color */
+    text-decoration: none;
+}
+footer a:hover {
+    color: #ffffff;
+}
+.agenda-table th {
+    background-color: #0d6efd; /* Primary color header */
+    color: white;
+    font-weight: 500;
+}
+.agenda-table th, .agenda-table td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 12px 8px; /* More padding */
+}
+.agenda-table tbody tr:nth-child(odd) {
+    background-color: #f8f9fa; /* Zebra striping */
+}
+.navbar {
+        background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
+        backdrop-filter: blur(8px); /* Stronger blur */
+        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+}
+.nav-link {
+    font-weight: 500;
+    color: #495057; /* Slightly darker nav links */
+    margin: 0 5px; /* Spacing between nav items */
+    padding: 8px 12px;
+    border-radius: 5px;
+}
+.nav-link:hover, .nav-link.active {
+    color: #0d6efd; /* Highlight color */
+    background-color: rgba(13, 110, 253, 0.1); /* Subtle background on hover */
+}
+.navbar-brand {
+    font-weight: 700;
+    color: #0d6efd !important; /* Make brand stand out */
+}
+.list-group-item {
+    border: none; /* Cleaner lists */
+    padding-left: 0;
+    background-color: transparent; /* Ensure background color doesn't interfere */
+}
+.list-group-item::before {
+    content: "\f058"; /* Font Awesome check circle */
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    color: #198754; /* Bootstrap success color */
+    margin-right: 10px;
+}
+.map-placeholder {
+    background-color: #e9ecef;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #6c757d;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+.sponsor-logo {
+    /* Basic styling for text-based sponsors */
+    font-weight: bold;
+    color: #495057;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+    .hero p {
+        font-size: 1rem;
+    }
+    .section-title {
+        font-size: 1.8rem;
+    }
+}
+
+.table-custom-color1 {
+    background-color: #f09b9b !important;
+}
+
+.table-custom-color2 {
+    background-color: #93dfb3 !important;
+}
+
+.table-custom-color3 {
+    background-color: #a6c9e6 !important;
+}
+
+.table-custom-color4 {
+    background-color: #afa6a6 !important;
+}
+
+.table-custom-color5 {
+    background-color: #f0ea95 !important;
+}
