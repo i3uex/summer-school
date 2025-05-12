@@ -3,9 +3,10 @@ body {
     scroll-behavior: smooth; /* Smooth scrolling for nav links */
 }
 .hero {
-    /* Placeholder background - replace with a relevant, high-quality image */
-    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('https://placehold.co/1920x700/667eea/ffffff?text=University+Campus+or+Abstract+Tech') no-repeat center center;
-    background-size: cover;
+    /* Improved background with fallback color and better image handling */
+    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('images/ffffff.jpg') no-repeat center center;
+    background-color: #000032; /* Fallback color for older browsers */
+    background-size: cover; /* Ensure the image covers the entire area */
     color: white;
     padding: 120px 0; /* Increased padding */
     text-align: center;
