@@ -4,7 +4,7 @@ body {
 }
 .hero {
     /* Improved background with fallback color and better image handling */
-    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('images/ffffff.jpg') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('images/digital-artificial-intelligence-concept-design-background-free-vector.jpg') no-repeat center center;
     background-color: #000032; /* Fallback color for older browsers */
     background-size: cover; /* Ensure the image covers the entire area */
     color: white;
