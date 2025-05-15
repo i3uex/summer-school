@@ -1,7 +1,7 @@
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    background: #fff;
+    background: linear-gradient(120deg, #f0f6ff 0%, #e0e7ff 100%);
     min-height: 100vh;
     color: #111;
 }
