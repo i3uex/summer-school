@@ -79,6 +79,17 @@ body {
     transform: scale(1.08);
     box-shadow: 0 6px 24px rgba(59, 130, 246, 0.18);
 }
+
+.caceres-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+.caceres-img:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    z-index: 2;
+}
 footer {
     background: #fff;
     color: #3b82f6;
