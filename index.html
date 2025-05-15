@@ -31,7 +31,7 @@
                     <li class="nav-item"><a class="nav-link" href="#caceres">Cáceres</a></li>
                     <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
                     <li class="nav-item"><a class="nav-link" href="#accommodation">Accommodation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+<!--                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>-->
                 </ul>
             </div>
         </div>
@@ -41,11 +41,13 @@
         <div class="container">
             <h1>1st International Summer School on LLM-based Agents for Software Engineering</h1>
             <p>1st - 3rd September, 2025 | University of Extremadura, Cáceres, Spain</p>
+<!--
             <div class="mt-4">
                 <a href="" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
                     <i class="fas fa-user-plus me-2"></i>Register Now
                 </a>
             </div>
+-->
         </div>
     </header>
 
@@ -76,7 +78,7 @@
                 <p>i3Lab by Quercus Software Engineering Group and INTIA (Instituto Universitario de Tecnologías Informáticas Aplicadas), Universidad de Extremadura.</p>
             </div>
         </section>
-
+<!--
         <section id="registration" class="py-5 text-center">
             <div class="container">
                 <h2 class="section-title">Registration</h2>
@@ -86,7 +88,7 @@
                 </a>
             </div>
         </section>
-
+-->
         <section id="agenda" class="py-5 bg-light rounded p-4">
             <h2 class="section-title">Agenda</h2>
             <p class="text-center text-muted mb-4">(Provisional - Subject to updates)</p>
@@ -382,6 +384,26 @@
 
          <section id="contact" class="py-5 bg-light rounded p-4">
             <h2 class="section-title">Contact Us</h2>
+
+            <div class="row justify-content-center mb-5">
+                <div class="col-md-8">
+                    <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
             <p class="text-center mb-4">For any inquiries regarding the summer school, please contact the chairs:</p>
             <div class="text-center">
                  <p><i class="fas fa-envelope me-2"></i>Roberto Rodríguez Echeverría: <a href="mailto:rre@unex.es">rre@unex.es</a></p>
