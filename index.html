@@ -7,7 +7,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     
@@ -16,7 +16,9 @@
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <a class="navbar-brand" href="#">LLMA4SE School</a>
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="images/logo.png" alt="LLMA4SE School Logo" style="height:64px; margin-right:12px;"> LLMA4SE School
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -38,16 +40,10 @@
     </nav>
 
     <header class="hero">
-        <div class="container">
+        <div class="hero-overlay"></div>
+        <div class="container position-relative">
             <h1>1st International Summer School on LLM-based Agents for Software Engineering</h1>
             <p>1st - 3rd September, 2025 | University of Extremadura, Cáceres, Spain</p>
-<!--
-            <div class="mt-4">
-                <a href="" class="btn btn-primary btn-lg" target="_blank" rel="noopener noreferrer">
-                    <i class="fas fa-user-plus me-2"></i>Register Now
-                </a>
-            </div>
--->
         </div>
     </header>
 
@@ -63,11 +59,20 @@
             </p>
             <h4 class="text-center mb-4">Key Topics:</h4>
             <div class="row justify-content-center">
-                <div class="col-md-8 col-lg-6">
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item">Agents for SE tasks (requirements, coding, testing, deployment, etc.).</li>
-                        <li class="list-group-item">Evaluation, monitoring, and benchmarking of agentic systems for SE.</li>
-                        <li class="list-group-item">Hybrid teams: human-agent collaboration.</li>
+                <div class="col-md-8 col-lg-7"> 
+                    <ul class="list-group list-group-flush key-topics-list">
+                        <li class="list-group-item key-topic-item">
+                            <span class="key-topic-icon"><i class="fas fa-check-circle"></i></span>
+                            Agents for SE tasks (requirements, coding, testing, deployment, etc.).
+                        </li>
+                        <li class="list-group-item key-topic-item">
+                            <span class="key-topic-icon"><i class="fas fa-check-circle"></i></span>
+                            Evaluation, monitoring, and benchmarking of agentic systems for SE.
+                        </li>
+                        <li class="list-group-item key-topic-item">
+                            <span class="key-topic-icon"><i class="fas fa-check-circle"></i></span>
+                            Hybrid teams: human-agent collaboration.
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -154,20 +159,29 @@
             </div>
         </section>
 
-        <section id="audience" class="py-5 bg-light rounded p-4">
+        <section id="audience" class="py-5">
             <h2 class="section-title">Target Audience</h2>
             <p class="lead text-center mb-4">This summer school is ideal for:</p>
             <div class="row justify-content-center">
                 <div class="col-md-10 col-lg-8">
-                   <ul class="list-group list-group-flush">
-                        <li class="list-group-item">
-                            <strong>PhD students:</strong> Primarily those in early stages, but also others interested in applying these techniques to their research.
+                   <ul class="list-unstyled audience-custom-list">
+                        <li class="audience-custom-item">
+                            <span class="audience-icon"><i class="fas fa-user-graduate"></i></span>
+                            <div>
+                                <strong>PhD students:</strong> Primarily those in early stages, but also others interested in applying these techniques to their research.
+                            </div>
                         </li>
-                        <li class="list-group-item">
-                            <strong>University professors:</strong> Educators seeking to integrate the school's topics into their courses or curricula.
+                        <li class="audience-custom-item">
+                            <span class="audience-icon"><i class="fas fa-chalkboard-teacher"></i></span>
+                            <div>
+                                <strong>University professors:</strong> Educators seeking to integrate the school's topics into their courses or curricula.
+                            </div>
                         </li>
-                        <li class="list-group-item">
-                            <strong>Software development professionals:</strong> Industry practitioners aiming to enhance productivity through new AI techniques.
+                        <li class="audience-custom-item">
+                            <span class="audience-icon"><i class="fas fa-laptop-code"></i></span>
+                            <div>
+                                <strong>Software development professionals:</strong> Industry practitioners aiming to enhance productivity through new AI techniques.
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -197,7 +211,7 @@
                             scrolling="no" 
                             marginheight="0" 
                             marginwidth="0" 
-                            src="https://www.openstreetmap.org/export/embed.html?bbox=-6.342242,39.477881,-6.346242,39.481881&amp;layer=mapnik&amp;marker=39.479881,-6.344242">
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=-6.344242,39.478881,-6.343242,39.480881&amp;layer=mapnik&amp;marker=39.479881,-6.344242">
                         </iframe>
                     </div>
                 </div>
@@ -223,27 +237,31 @@
              <p class="text-center mb-5">
                  Whether drawn by medieval majesty, cutting-edge art, or world-class dining, Cáceres offers a thrilling journey through time. The city is currently bidding to become the European Capital of Culture in 2031.
              </p>
-             <div class="row gy-4">
+           
+            <div class="row gy-4 mt-2">
                 <div class="col-md-3 col-sm-6">
-                    <a href="https://turismo.caceres.es/es/node/307" target="_blank" rel="noopener noreferrer">
-                        <img src="images/CaceresOldTown.png" class="img-fluid rounded" alt="Caceres Old Town" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/Caceres/caceres1.webp" class="img-fluid rounded caceres-img" alt="Cáceres Imagen 1" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="https://www.ayto-caceres.es/ " target="_blank" rel="noopener noreferrer">
-                        <img src="images/AyuntamientoCaceres.png" class="img-fluid rounded" alt="Caceres Street" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/Caceres/caceres2.avif" class="img-fluid rounded caceres-img" alt="Cáceres Imagen 2" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="https://turismo.caceres.es/es/node/307" target="_blank" rel="noopener noreferrer">
-                        <img src="images/PlazaMayor.png" class="img-fluid rounded" alt="Plaza Mayor" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/Caceres/caceres3.jpg" class="img-fluid rounded caceres-img" alt="Cáceres Imagen 3" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
                     </a>
                 </div>
                 <div class="col-md-3 col-sm-6">
-                    <a href="https://turismo.caceres.es/es/node/307" target="_blank" rel="noopener noreferrer">
-                        <img src="images/OldTownWallsNight.png" class="img-fluid rounded" alt="City Walls at Night" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/Caceres/caceres4.jpg" class="img-fluid rounded caceres-img" alt="Cáceres Imagen 4" onerror="this.src='https://placehold.co/400x300/cccccc/ffffff?text=Image+Error'">
                     </a>
                 </div>
+            </div>
+            <div class="caceres-photo-credit mt-3">
+                <em>Photographs courtesy of Silvia</em>
             </div>
         </section>
 
@@ -285,10 +303,10 @@
                     <h5>Partner Hotels (Examples):</h5>
                     <div class="mb-4">
                         <div class="card">
-                            <div class="card-body">
+                            <div class="card-body static-card">
                                 <h6><strong>Hotel AHC Cáceres</strong></h6>
                                 <p class="mb-2">Budget-friendly, < 2 km from venue</p>
-                                <div class="map-container">
+                                <div class="map-container accommodation-map">
                                     <iframe 
                                         width="100%" 
                                         height="300" 
@@ -296,7 +314,7 @@
                                         scrolling="no" 
                                         marginheight="0" 
                                         marginwidth="0" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.353401,39.477448,-6.357401,39.481448&amp;layer=mapnik&amp;marker=39.479448,-6.355401">
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.355401,39.478448,-6.354401,39.480448&amp;layer=mapnik&amp;marker=39.479448,-6.355401">
                                     </iframe>
                                 </div>
                                 <p class="mt-2"><a href="https://www.ahchoteles.com/hotel/ahc-caceres/" target="_blank" rel="noopener noreferrer">Visit Hotel AHC Cáceres Website</a></p>
@@ -308,7 +326,7 @@
                             <div class="card-body">
                                 <h6><strong>Gran Hotel Don Manuel</strong></h6>
                                 <p class="mb-2">Special UEx rates may apply, < 3 km from venue</p>
-                                <div class="map-container">
+                                <div class="map-container accommodation-map">
                                     <iframe 
                                         width="100%" 
                                         height="300" 
@@ -316,7 +334,7 @@
                                         scrolling="no" 
                                         marginheight="0" 
                                         marginwidth="0" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.369748,39.475639,-6.373748,39.479639&amp;layer=mapnik&amp;marker=39.477639,-6.371748">
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.371748,39.476639,-6.370748,39.478639&amp;layer=mapnik&amp;marker=39.477639,-6.371748">
                                     </iframe>
                                 </div>
                                 <p class="mt-2"><a href="https://www.granhoteldonmanuel.com/el-hotel/" target="_blank" rel="noopener noreferrer">Visit Gran Hotel Don Manuel Website</a></p>
@@ -331,7 +349,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6>Colegio Mayor Antonio Franco</h6>
-                                <div class="map-container">
+                                <div class="map-container accommodation-map">
                                     <iframe 
                                         width="100%" 
                                         height="300" 
@@ -339,7 +357,7 @@
                                         scrolling="no" 
                                         marginheight="0" 
                                         marginwidth="0" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.37040,39.47863,-6.37440,39.48263&amp;layer=mapnik&amp;marker=39.48063,-6.37240">
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.37240,39.48023,-6.37140,39.48123&amp;layer=mapnik&amp;marker=39.48063,-6.37240">
                                     </iframe>
                                 </div>
                                 <p class="mt-2"><a href="https://www.fundacioncajaextremadura.com/centros/colegio-mayor-universitario/" target="_blank" rel="noopener noreferrer">Visit Colegio Mayor Antonio Franco Website</a></p>
@@ -350,7 +368,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h6>Residencia Universitaria Mario Roso de Luna</h6>
-                                <div class="map-container">
+                                <div class="map-container accommodation-map">
                                     <iframe 
                                         width="100%" 
                                         height="300" 
@@ -358,7 +376,7 @@
                                         scrolling="no" 
                                         marginheight="0" 
                                         marginwidth="0" 
-                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.35318,39.48030,-6.35718,39.48430&amp;layer=mapnik&amp;marker=39.48230,-6.35518">
+                                        src="https://www.openstreetmap.org/export/embed.html?bbox=-6.35518,39.48180,-6.35418,39.48280&amp;layer=mapnik&amp;marker=39.48230,-6.35518">
                                     </iframe>
                                 </div>
                                 <p class="mt-2"><a href="http://residencias.educarex.es/index.php/mario-roso-de-luna" target="_blank" rel="noopener noreferrer">Visit Residencia Universitaria Mario Roso de Luna Website</a></p>
@@ -389,14 +407,17 @@
             <div class="row justify-content-center mb-5">
                 <div class="col-md-8">
                     <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
-                        <div class="mb-3">
+                        <div class="form-floating mb-3">
                             <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                            <label for="name">Your Name</label>
                         </div>
-                        <div class="mb-3">
+                        <div class="form-floating mb-3">
                             <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                            <label for="email">Your Email</label>
                         </div>
-                        <div class="mb-3">
-                            <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+                        <div class="form-floating mb-3">
+                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" required style="height: 120px"></textarea>
+                            <label for="message">Your Message</label>
                         </div>
                         <div class="text-center">
                             <button type="submit" class="btn btn-primary">Send Message</button>
@@ -444,6 +465,38 @@
             });
         });
     </script>
+
+    <!-- Lightbox Modal for Cáceres images -->
+<div id="caceresLightbox" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center;">
+    <span id="caceresLightboxClose" style="position:absolute; top:30px; right:40px; color:#fff; font-size:3rem; cursor:pointer; z-index:2010;">&times;</span>
+    <img id="caceresLightboxImg" src="" alt="Cáceres" style="max-width:90vw; max-height:85vh; border-radius:12px; box-shadow:0 0 30px #000;">
+</div>
+<script>
+// Lightbox functionality for Cáceres images
+const caceresLinks = document.querySelectorAll('.caceres-img-link');
+const lightbox = document.getElementById('caceresLightbox');
+const lightboxImg = document.getElementById('caceresLightboxImg');
+const lightboxClose = document.getElementById('caceresLightboxClose');
+caceresLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const img = this.querySelector('img');
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.style.display = 'flex';
+    });
+});
+lightboxClose.addEventListener('click', function() {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+});
+lightbox.addEventListener('click', function(e) {
+    if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+    }
+});
+</script>
 
 </body>
 </html>

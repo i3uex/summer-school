@@ -1,174 +1,442 @@
+/* Estilos básicos */
 body {
-    font-family: 'Inter', sans-serif; /* Use Inter font */
-    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    background: #fff; /* Changed from linear-gradient to white */
+    min-height: 100vh;
+    color: #111;
+    overflow-x: hidden;
 }
+
+/* RESET - Eliminar todas las reglas duplicadas del hero */
 .hero {
-    /* Improved background with fallback color and better image handling */
-    background: linear-gradient(rgba(0, 0, 50, 0.6), rgba(0, 0, 50, 0.6)), url('images/digital-artificial-intelligence-concept-design-background-free-vector.jpg') no-repeat center center;
-    background-color: #000032; /* Fallback color for older browsers */
-    background-size: cover; /* Ensure the image covers the entire area */
-    color: white;
-    padding: 120px 0; /* Increased padding */
+    background: url('images/title_background.jpg') no-repeat center center;
+    background-size: cover;
+    padding: 80px 0;
     text-align: center;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle text shadow */
+    position: relative;
 }
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 1;
+}
+
 .hero h1 {
-    font-size: 2.8rem; /* Responsive font size */
-    font-weight: 700; /* Bolder */
-    margin-bottom: 0.5em;
+    font-weight: 800;
+    font-size: 3rem;
+    margin-bottom: 1.2rem;
+    color: #fff;
+    letter-spacing: -0.5px;
+    text-transform: uppercase;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    line-height: 1.2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
+
 .hero p {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    color: #fff;
+    opacity: 0.95;
     font-weight: 300;
+    font-family: 'Montserrat', 'Inter', sans-serif;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
 }
+
+/* Navbar - versión simple y corregida */
+.navbar {
+    background: #fff;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 8px rgba(59, 130, 246, 0.07);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    border-radius: 0;
+}
+
+.navbar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #3b82f6;
+    margin: 0 4px;
+    padding: 7px 14px;
+    border-radius: 6px;
+    transition: background 0.25s, color 0.25s, transform 0.25s;
+}
+.nav-link:hover, .nav-link.active {
+    color: #2563eb; /* Darker shade of primary blue for text */
+    background: rgba(59, 130, 246, 0.1); /* Light, tinted background */
+    transform: scale(1.07);
+}
+.navbar-brand {
+    font-weight: 700;
+    color: #111 !important;
+    letter-spacing: 1px;
+}
+
+/* Sección de tarjetas y agenda */
+.card {
+    border: none;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.08);
+    border-radius: 14px;
+    transition: transform 0.35s cubic-bezier(.4,0,.2,1), box-shadow 0.35s cubic-bezier(.4,0,.2,1);
+    height: 100%;
+    background: #fff;
+    color: #111;
+    backdrop-filter: blur(2px);
+}
+.card:hover {
+    transform: translateY(-8px) scale(1.03) rotate(-1deg);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.18);
+    color: #3b82f6;
+}
+
 .section-title {
     text-align: center;
-    margin-top: 3rem; /* Add space above titles */
-    margin-bottom: 3rem; /* Consistent spacing */
-    font-weight: 700; /* Bolder section titles */
-    font-size: 2.2rem;
-    color: #343a40; /* Darker color */
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #3b82f6;
     position: relative;
-    padding-bottom: 10px;
+    padding-bottom: 8px;
+    background: none;
 }
 /* Underline effect for section titles */
 .section-title::after {
     content: '';
     position: absolute;
     display: block;
-    width: 60px;
-    height: 3px;
-    background: #0d6efd; /* Bootstrap primary */
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #3b82f6 0%, #111 100%);
     bottom: 0;
     left: 50%;
     transform: translateX(-50%);
+    border-radius: 2px;
 }
-.card {
-    border: none; /* Remove default card border */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    border-radius: 10px; /* Rounded corners */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
-    height: 100%; /* Ensure cards in a row have same height */
+
+/* Key Topics Styles */
+.key-topics-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
 }
-.card:hover {
-    transform: translateY(-5px); /* Lift card on hover */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+
+.key-topic-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the start for multi-line text */
+    background-color: #fff; /* Light background for each item - Changed to white */
+    border: 1px solid #e0e7ff; /* Subtle border - Adjusted for white background */
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem; /* Space between items */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem;
+    color: #333;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-.speaker-img {
-    width: 130px; /* Slightly smaller */
-    height: 130px;
-    object-fit: cover;
-    border-radius: 50%; /* Circular images */
-    margin: 15px auto; /* Center image */
-    display: block;
-    border: 3px solid #e9ecef; /* Light border */
+
+.key-topic-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
-footer {
-    background-color: #343a40; /* Dark footer */
-    color: #f8f9fa; /* Light text */
-    padding: 40px 0;
-    margin-top: 50px;
+
+.key-topic-icon {
+    color: #3b82f6; /* Primary blue color for the icon */
+    margin-right: 0.75rem; /* Space between icon and text */
+    font-size: 1.2em; /* Slightly larger icon */
+    margin-top: 0.1em; /* Adjust vertical alignment with text */
 }
-footer a {
-    color: #adb5bd; /* Lighter link color */
-    text-decoration: none;
-}
-footer a:hover {
-    color: #ffffff;
-}
+
 .agenda-table th {
-    background-color: #0d6efd; /* Primary color header */
-    color: white;
-    font-weight: 500;
+    background: #3b82f6;
+    color: #fff;
+    font-weight: 600;
+    border: none;
 }
 .agenda-table th, .agenda-table td {
     text-align: center;
     vertical-align: middle;
-    padding: 12px 8px; /* More padding */
+    padding: 10px 6px;
+    background: #fff;
+    border: none;
+    color: #111;
 }
 .agenda-table tbody tr:nth-child(odd) {
-    background-color: #f8f9fa; /* Zebra striping */
+    background-color: #fff; /* Changed from #e0e7ff to #fff */
 }
-.navbar {
-        background-color: rgba(255, 255, 255, 0.95); /* Slightly more opaque */
-        backdrop-filter: blur(8px); /* Stronger blur */
-        box-shadow: 0 2px 4px rgba(0,0,0,0.05); /* Subtle shadow */
+
+/* Estilos de imágenes de ponentes */
+.speaker-img {
+    width: 110px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin: 12px auto;
+    display: block;
+    border: 2px solid #3b82f6;
+    transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
 }
-.nav-link {
-    font-weight: 500;
-    color: #495057; /* Slightly darker nav links */
-    margin: 0 5px; /* Spacing between nav items */
-    padding: 8px 12px;
-    border-radius: 5px;
+.speaker-img:hover {
+    border-color: #111;
+    transform: scale(1.08);
+    box-shadow: 0 6px 24px rgba(59, 130, 246, 0.18);
 }
-.nav-link:hover, .nav-link.active {
-    color: #0d6efd; /* Highlight color */
-    background-color: rgba(13, 110, 253, 0.1); /* Subtle background on hover */
+
+/* Target Audience Styles */
+#audience .audience-custom-list {
+    margin-top: 1.5rem;
 }
-.navbar-brand {
-    font-weight: 700;
-    color: #0d6efd !important; /* Make brand stand out */
+
+.audience-custom-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border: 1px solid #e0e7ff;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
 }
-.list-group-item {
-    border: none; /* Cleaner lists */
-    padding-left: 0;
-    background-color: transparent; /* Ensure background color doesn't interfere */
+
+.audience-custom-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
 }
-.list-group-item::before {
-    content: "\f058"; /* Font Awesome check circle */
-    font-family: "Font Awesome 6 Free";
-    font-weight: 900;
-    color: #198754; /* Bootstrap success color */
-    margin-right: 10px;
+
+.audience-custom-item:last-child {
+    margin-bottom: 0;
 }
+
+.audience-icon {
+    color: #3b82f6; /* Primary blue */
+    font-size: 1.5rem; 
+    margin-right: 1rem;
+    margin-top: 0.1rem; 
+    width: 25px; 
+    text-align: center;
+}
+
+.audience-custom-item strong {
+    font-weight: 600;
+    color: #343a40; /* Darker grey for strong text */
+    margin-bottom: 0.3rem;
+    display: inline-block; /* Allows margin-bottom to take effect */
+}
+
+/* Estilos de imágenes de Cáceres */
+.caceres-img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    cursor: pointer;
+}
+.caceres-img:hover {
+    transform: translateY(-5px) scale(1.04);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    z-index: 2;
+}
+
+/* Estilos del footer */
+footer {
+    background: #fff;
+    color: #3b82f6;
+    padding: 32px 0;
+    margin-top: 40px;
+    text-align: center;
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+    border-top: 2px solid #3b82f6;
+}
+footer a {
+    color: #3b82f6;
+    text-decoration: underline dotted;
+    transition: color 0.2s;
+}
+footer a:hover {
+    color: #111;
+}
+
+/* Estilos del mapa */
 .map-placeholder {
-    background-color: #e9ecef;
-    height: 300px;
+    background: #fff;
+    height: 260px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    color: #6c757d;
+    color: #3b82f6;
     border-radius: 10px;
-    margin-top: 20px;
+    margin-top: 18px;
+    font-size: 1.1rem;
+    border: 1px solid #e0e7ff;
 }
+
+/* Solo los mapas de accommodation no tienen efecto de hover visual */
+.accommodation-map,
+.accommodation-map:hover,
+.accommodation-map:focus {
+    background: #fff !important;
+    box-shadow: none !important;
+    border: 1px solid #e0e7ff !important;
+    border-radius: 10px !important;
+    color: #3b82f6 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    outline: none !important;
+    cursor: default !important;
+}
+
+/* Elimina el efecto hover de los hijos directos .accommodation-map */
+.accommodation-map * {
+    box-shadow: none !important;
+    background: #fff !important;
+    border: none !important;
+    color: #3b82f6 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+    outline: none !important;
+    cursor: default !important;
+}
+
+/* Override card hover effects for accommodation maps */
+#accommodation .card:hover .accommodation-map,
+#accommodation .card:hover {
+    transform: none !important;
+    box-shadow: 0 2px 10px rgba(59, 130, 246, 0.08) !important;
+    color: #111 !important;
+    rotate: 0deg !important;
+}
+
+/* Asegurar que los iframes de mapas no tengan efecto */
+#accommodation iframe {
+    pointer-events: auto;
+}
+
 .sponsor-logo {
-    /* Basic styling for text-based sponsors */
     font-weight: bold;
-    color: #495057;
-    padding: 15px;
+    color: #3b82f6;
+    padding: 12px;
     text-align: center;
+    background: none;
+}
+
+/* Contact Form Styles */
+form.contact-form {
+    max-width: 420px;
+    margin: 2rem auto;
+    background: #fff; 
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    /* gap: 1.5rem; */ /* Removed gap, spacing handled by .mb-3 on form-floating divs */
+}
+
+/* Target .form-control within the specific contact form */
+form.contact-form .form-control {
+    border: 1px solid #dbe1e6; 
+    border-radius: 8px; 
+    /* padding: 0.8rem 1rem; */ /* Removed custom padding for Bootstrap floating label compatibility */
+    font-size: 1rem;
+    background: #fff;
+    color: #212529; 
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+form.contact-form .form-control:focus {
+    border-color: #3b82f6; /* Primary blue for focus */
+    outline: none;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25); /* Bootstrap-like focus shadow */
+}
+/* Target .btn-primary within the specific contact form */
+form.contact-form .btn-primary {
+    background-color: #3b82f6; /* Solid background color */
+    border-color: #3b82f6; /* Matching border color */
+    color: #fff;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: 500; /* Adjusted font weight */
+    cursor: pointer;
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.15); /* Softer shadow */
+}
+form.contact-form .btn-primary:hover {
+    background-color: #2c72d8; /* Darker shade on hover */
+    border-color: #296acc; /* Matching darker border */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2); /* Enhanced shadow on hover */
+}
+
+/* Animaciones generales */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.hero, .section-title, .card, .agenda-table, .navbar, .footer, .contact-form {
+    animation: fadeInUp 0.8s cubic-bezier(.4,0,.2,1);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .hero h1 {
-        font-size: 2.2rem;
+        font-size: 1.7rem;
     }
     .hero p {
-        font-size: 1rem;
+        font-size: 0.98rem;
     }
     .section-title {
-        font-size: 1.8rem;
+        font-size: 1.3rem;
+    }
+    .card {
+        padding: 10px 0;
+    }
+    form.contact-form {
+        padding: 1.2rem 0.5rem;
     }
 }
 
 .table-custom-color1 {
-    background-color: #f09b9b !important;
+    background-color: #3b82f6 !important;
+    color: #fff;
 }
 
 .table-custom-color2 {
-    background-color: #93dfb3 !important;
+    background-color: #111 !important;
+    color: #fff;
 }
 
 .table-custom-color3 {
-    background-color: #a6c9e6 !important;
+    background-color: #e0e7ff !important;
+    color: #111;
 }
 
 .table-custom-color4 {
-    background-color: #afa6a6 !important;
+    background-color: #f8fafc !important;
+    color: #111;
 }
 
 .table-custom-color5 {
-    background-color: #f0ea95 !important;
+    background-color: #f3f4f6 !important;
+    color: #111;
 }
