@@ -81,8 +81,8 @@ body {
     transition: background 0.25s, color 0.25s, transform 0.25s;
 }
 .nav-link:hover, .nav-link.active {
-    color: #fff;
-    background: #3b82f6;
+    color: #2563eb; /* Darker shade of primary blue for text */
+    background: rgba(59, 130, 246, 0.1); /* Light, tinted background */
     transform: scale(1.07);
 }
 .navbar-brand {
@@ -198,6 +198,48 @@ body {
     border-color: #111;
     transform: scale(1.08);
     box-shadow: 0 6px 24px rgba(59, 130, 246, 0.18);
+}
+
+/* Target Audience Styles */
+#audience .audience-custom-list {
+    margin-top: 1.5rem;
+}
+
+.audience-custom-item {
+    display: flex;
+    align-items: flex-start;
+    background-color: #fff;
+    border: 1px solid #e0e7ff;
+    padding: 1.25rem 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.audience-custom-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+.audience-custom-item:last-child {
+    margin-bottom: 0;
+}
+
+.audience-icon {
+    color: #3b82f6; /* Primary blue */
+    font-size: 1.5rem; 
+    margin-right: 1rem;
+    margin-top: 0.1rem; 
+    width: 25px; 
+    text-align: center;
+}
+
+.audience-custom-item strong {
+    font-weight: 600;
+    color: #343a40; /* Darker grey for strong text */
+    margin-bottom: 0.3rem;
+    display: inline-block; /* Allows margin-bottom to take effect */
 }
 
 /* Estilos de imágenes de Cáceres */
