@@ -2,7 +2,7 @@
 body {
     font-family: 'Inter', sans-serif;
     scroll-behavior: smooth;
-    background: linear-gradient(120deg, #f0f6ff 0%, #e0e7ff 100%);
+    background: #fff; /* Changed from linear-gradient to white */
     min-height: 100vh;
     color: #111;
     overflow-x: hidden;
@@ -133,6 +133,38 @@ body {
     border-radius: 2px;
 }
 
+/* Key Topics Styles */
+.key-topics-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 1rem;
+}
+
+.key-topic-item {
+    display: flex;
+    align-items: flex-start; /* Align items to the start for multi-line text */
+    background-color: #fff; /* Light background for each item - Changed to white */
+    border: 1px solid #e0e7ff; /* Subtle border - Adjusted for white background */
+    padding: 1rem 1.25rem;
+    margin-bottom: 0.75rem; /* Space between items */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem;
+    color: #333;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.key-topic-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.key-topic-icon {
+    color: #3b82f6; /* Primary blue color for the icon */
+    margin-right: 0.75rem; /* Space between icon and text */
+    font-size: 1.2em; /* Slightly larger icon */
+    margin-top: 0.1em; /* Adjust vertical alignment with text */
+}
+
 .agenda-table th {
     background: #3b82f6;
     color: #fff;
@@ -148,7 +180,7 @@ body {
     color: #111;
 }
 .agenda-table tbody tr:nth-child(odd) {
-    background-color: #e0e7ff;
+    background-color: #fff; /* Changed from #e0e7ff to #fff */
 }
 
 /* Estilos de imágenes de ponentes */
@@ -270,51 +302,53 @@ footer a:hover {
 form.contact-form {
     max-width: 420px;
     margin: 2rem auto;
-    background: #f8fafc;
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(59,130,246,0.07);
-    padding: 2rem 1.5rem;
+    background: #fff; 
+    border-radius: 12px; /* Updated from 16px */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* Updated shadow */
+    padding: 2.5rem; /* Updated padding */
     display: flex;
     flex-direction: column;
-    gap: 1.2rem;
-    border: 1px solid #e0e7ff;
+    gap: 1.5rem; /* Increased gap slightly */
+    /* border: 1px solid #e0e7ff; */ /* Removed border */
 }
 form.contact-form label {
-    color: #111;
+    color: #495057; /* Softer color, Bootstrap's default label color */
     font-weight: 500;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.5rem; /* Increased margin */
 }
-form.contact-form input,
-form.contact-form textarea {
-    border: 1.5px solid #3b82f6;
-    border-radius: 8px;
-    padding: 0.7rem 1rem;
+/* Target .form-control within the specific contact form */
+form.contact-form .form-control {
+    border: 1px solid #dbe1e6; /* Lighter border */
+    border-radius: 8px; 
+    padding: 0.8rem 1rem; /* Adjusted padding */
     font-size: 1rem;
     background: #fff;
-    color: #111;
-    transition: border-color 0.2s, box-shadow 0.2s;
+    color: #212529; /* Bootstrap's default input text color */
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
-form.contact-form input:focus,
-form.contact-form textarea:focus {
-    border-color: #111;
+form.contact-form .form-control:focus {
+    border-color: #3b82f6; /* Primary blue for focus */
     outline: none;
-    box-shadow: 0 0 0 2px #3b82f6;
+    box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.25); /* Bootstrap-like focus shadow */
 }
-form.contact-form button[type="submit"] {
-    background: linear-gradient(90deg, #3b82f6 0%, #111 100%);
+/* Target .btn-primary within the specific contact form */
+form.contact-form .btn-primary {
+    background-color: #3b82f6; /* Solid background color */
+    border-color: #3b82f6; /* Matching border color */
     color: #fff;
-    border: none;
     border-radius: 8px;
-    padding: 0.8rem 1.5rem;
-    font-size: 1.1rem;
-    font-weight: 600;
+    padding: 0.75rem 1.5rem; /* Adjusted padding */
+    font-size: 1rem; /* Adjusted font size */
+    font-weight: 500; /* Adjusted font weight */
     cursor: pointer;
-    transition: background 0.25s, transform 0.2s;
-    box-shadow: 0 2px 8px rgba(59,130,246,0.10);
+    transition: background-color 0.15s ease-in-out, border-color 0.15s ease-in-out, transform 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.15); /* Softer shadow */
 }
-form.contact-form button[type="submit"]:hover {
-    background: linear-gradient(90deg, #111 0%, #3b82f6 100%);
-    transform: scale(1.04);
+form.contact-form .btn-primary:hover {
+    background-color: #2c72d8; /* Darker shade on hover */
+    border-color: #296acc; /* Matching darker border */
+    transform: translateY(-2px); /* Subtle lift effect */
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.2); /* Enhanced shadow on hover */
 }
 
 /* Animaciones generales */
