@@ -14,6 +14,10 @@
   --transition-slow: all 0.4s ease;
   --transition-fast: all 0.2s ease;
   --radius: 8px;
+  --accent-gradient: linear-gradient(135deg, var(--primary-light), rgba(37, 99, 235, 0.1));
+  --section-margin: 2.5rem 0;
+  --section-padding: 2rem 0;
+  --soft-bg: rgba(249, 250, 251, 0.5);
 }
 
 /* Base Styles */
@@ -138,28 +142,49 @@ p {
   transform: none;
 }
 
-/* Section Titles */
+/* Section Enhancements - More Subtle */
+section {
+  position: relative;
+  margin: var(--section-margin);
+  padding: var(--section-padding);
+  border-radius: var(--radius);
+  transition: var(--transition);
+}
+
+/* Remove the more pronounced styling for sections */
+section:not(.bg-light)::before {
+  content: none;
+}
+
+/* Keep only bg-light sections with subtle background */
+section.bg-light {
+  background: var(--soft-bg);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Make section titles consistent but slightly improved */
 .section-title {
   text-align: center;
-  margin-top: 3rem;
+  margin-top: 0.5rem;
   margin-bottom: 2.5rem;
   font-weight: 600;
-  font-size: 1.8rem;
+  font-size: 2.2rem;
   color: var(--text);
   position: relative;
-  padding-bottom: 0.5rem;
-  animation: slideUp 0.8s ease forwards;
+  padding-bottom: 0.6rem;
 }
 
 .section-title::after {
   content: '';
   position: absolute;
-  width: 50px;
-  height: 3px;
+  width: 40px;
+  height: 2px;
   background-color: var(--primary);
+  border-radius: 2px;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
+  opacity: 0.6;
 }
 
 /* Cards */
@@ -312,8 +337,18 @@ p {
 
 .audience-icon {
   color: var(--primary);
-  font-size: 1.5rem;
-  margin-right: 1.2rem;
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  transition: var(--transition);
+  background: transparent;
+  width: auto;
+  height: auto;
+  display: inline;
+  box-shadow: none;
+}
+
+.audience-custom-item:hover .audience-icon {
+  transform: scale(1.1);
 }
 
 /* Cáceres Images */
@@ -404,11 +439,23 @@ footer {
 #social .card {
   text-align: center;
   padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#social .card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
 }
 
 #social .card i {
   color: var(--primary);
   margin-bottom: 1rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+#social .card:hover i {
+  transform: scale(1.1);
+  color: var(--primary-dark);
 }
 
 /* Accommodation */
@@ -550,6 +597,16 @@ section.visible {
   .caceres-img {
     height: 180px;
   }
+  
+  section {
+    margin: 2rem 0;
+    padding: 2rem 0;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+  }
 }
 
 @media (max-width: 576px) {
@@ -586,9 +643,61 @@ section.highlight::before {
   content: '';
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, var(--primary), transparent);
-  animation: pulse 2s infinite;
+  left: 45%;
+  right: 45%;
+  height: 2px;
+  background-color: var(--primary);
+  opacity: 0.6;
+}
+
+/* Special formatting for sponsors section */
+#sponsors {
+  background: white;
+  box-shadow: var(--shadow-sm);
+  border-radius: var(--section-radius);
+  padding: 2rem 0;
+}
+
+#sponsors img {
+  filter: grayscale(15%);
+  transition: all 0.3s ease;
+  opacity: 0.9;
+}
+
+#sponsors img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+  opacity: 1;
+}
+
+/* Make certain sections stand out */
+#about, #venue, #social, #agenda, #caceres, #accommodation, #contact, #sponsors {
+  background-color: transparent;
+  border-radius: 0;
+  box-shadow: none;
+  border: none;
+}
+
+/* Restore only original bg-light sections */
+#agenda, #caceres, #accommodation, #contact {
+  background: var(--soft-bg);
+  border-radius: var(--radius);
+}
+
+/* Fix audience icons - make them less prominent but still visible */
+#audience .audience-icon {
+  color: var(--primary);
+  font-size: 1.3rem;
+  margin-right: 1rem;
+  transition: var(--transition);
+  background: transparent;
+  width: auto;
+  height: auto;
+  display: inline;
+  box-shadow: none;
+}
+
+/* Fix spacing in audience items */
+.audience-custom-item {
+  align-items: flex-start;
 }
