@@ -216,11 +216,11 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <a href="https://extremadura.fe.ccoo.es/noticia:694469--La_UEx_aprueba_el_calendario_academico_para_el_curso_20242025&opc_id=1d45b5d1fb02e61bd1a4ba1c034e5fb7" target="_blank" rel="noopener noreferrer">
-                        <img src="images/VenueINTIA1.png" class="img-fluid rounded mb-3" alt="Venue INTIA 1" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/VenueINTIA1.png" class="img-fluid rounded mb-3 caceres-img" alt="Venue INTIA 1" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'">
                     </a>
-                    <a href="https://www.fernandoalda.com/es/proyectos/arquitectura/811/instituto-de-investigacion-universidad-de-extremadura-campus-de-caceres/" target="_blank" rel="noopener noreferrer">
-                        <img src="images/VenueINTIA2.png" class="img-fluid rounded" alt="Venue INTIA 2" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'">
+                    <a href="#" class="caceres-img-link">
+                        <img src="images/VenueINTIA2.png" class="img-fluid rounded caceres-img" alt="Venue INTIA 2" onerror="this.src='https://placehold.co/600x400/cccccc/ffffff?text=Image+Error'">
                     </a>
                 </div>
             </div>
@@ -563,7 +563,7 @@
             });
         });
 
-        // Lightbox functionality for Cáceres images (keep existing code)
+        // Lightbox functionality for all images with caceres-img-link class
         const caceresLinks = document.querySelectorAll('.caceres-img-link');
         const lightbox = document.getElementById('caceresLightbox');
         const lightboxImg = document.getElementById('caceresLightboxImg');
@@ -588,5 +588,77 @@
             }
         });
     </script>
+    
+    <!-- Reemplazar el script del Lightbox por uno más robusto -->
+    <script>
+        // Esperar a que el documento esté completamente cargado
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log("DOM completamente cargado");
+            
+            // Lightbox mejorado para todas las imágenes con clase caceres-img
+            const lightboxInit = function() {
+                console.log("Inicializando lightbox...");
+                
+                // Seleccionar todos los enlaces que contienen imágenes
+                const imageLinks = document.querySelectorAll('.caceres-img-link');
+                const lightbox = document.getElementById('caceresLightbox');
+                const lightboxImg = document.getElementById('caceresLightboxImg');
+                const lightboxClose = document.getElementById('caceresLightboxClose');
+                
+                console.log(`Encontrados ${imageLinks.length} enlaces con imágenes`);
+                
+                if (!lightbox || !lightboxImg || !lightboxClose) {
+                    console.error("Elementos del lightbox no encontrados");
+                    return;
+                }
+                
+                // Añadir evento click a cada enlace
+                imageLinks.forEach((link, index) => {
+                    console.log(`Configurando listener para imagen ${index+1}`);
+                    
+                    link.onclick = function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        
+                        const img = this.querySelector('img');
+                        console.log(`Imagen clickeada: ${img.alt} - Ruta: ${img.src}`);
+                        
+                        // Actualizar y mostrar el lightbox
+                        lightboxImg.src = img.src;
+                        lightboxImg.alt = img.alt;
+                        lightbox.style.display = 'flex';
+                        
+                        return false;
+                    };
+                });
+                
+                // Cerrar el lightbox al hacer clic en el botón de cerrar
+                lightboxClose.onclick = function() {
+                    lightbox.style.display = 'none';
+                    lightboxImg.src = '';
+                };
+                
+                // Cerrar el lightbox al hacer clic en el fondo
+                lightbox.onclick = function(e) {
+                    if (e.target === lightbox) {
+                        lightbox.style.display = 'none';
+                        lightboxImg.src = '';
+                    }
+                };
+                
+                console.log("Lightbox inicializado correctamente");
+            };
+            
+            // Inicializar el lightbox después de que todo esté cargado
+            setTimeout(lightboxInit, 500);
+        });
+    </script>
+    
+    <!-- Lightbox Modal para imágenes -->
+    <div id="caceresLightbox" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.9); justify-content:center; align-items:center;">
+        <span id="caceresLightboxClose" style="position:absolute; top:20px; right:30px; color:#fff; font-size:2.5rem; cursor:pointer; z-index:2010; opacity:0.8;">&times;</span>
+        <img id="caceresLightboxImg" src="" alt="Image Preview" style="max-width:90vw; max-height:85vh; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.3);">
+    </div>
+
 </body>
 </html>
