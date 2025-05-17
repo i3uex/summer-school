@@ -440,63 +440,153 @@
         </div>
     </footer>
 
+    <!-- Existing Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 
     <script>
-        const sections = document.querySelectorAll('section[id]');
-        const navLi = document.querySelectorAll('.navbar-nav .nav-item .nav-link');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // Adjust the offset based on navbar height if needed
-                if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
-                    current = section.getAttribute('id');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll animation
+            const navbar = document.querySelector('.navbar');
+            const heroHeight = document.querySelector('.hero').offsetHeight;
+            
+            // Animation for elements on scroll
+            const animateOnScroll = function() {
+                // Navbar color change on scroll
+                if (window.scrollY > 30) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
                 }
+                
+                // Animate sections when they enter viewport
+                const sections = document.querySelectorAll('section');
+                sections.forEach(section => {
+                    const sectionTop = section.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    if (sectionTop < windowHeight * 0.85) {
+                        section.classList.add('visible');
+                        
+                        // Animate cards within this section
+                        const cards = section.querySelectorAll('.card');
+                        cards.forEach((card, index) => {
+                            setTimeout(() => {
+                                card.classList.add('visible');
+                            }, 100 * index);
+                        });
+                        
+                        // Animate tables within this section
+                        const tables = section.querySelectorAll('.agenda-table');
+                        tables.forEach(table => {
+                            table.classList.add('visible');
+                        });
+                        
+                        // Animate maps within this section
+                        const maps = section.querySelectorAll('.map-container');
+                        maps.forEach((map, index) => {
+                            setTimeout(() => {
+                                map.classList.add('visible');
+                            }, 200 * index);
+                        });
+                    }
+                });
+            };
+            
+            // Highlight active section in navigation
+            const highlightNavigation = function() {
+                let scrollPosition = window.scrollY;
+                
+                // Get all sections and their positions
+                const sections = document.querySelectorAll('section[id]');
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop - 100; // Offset for navbar
+                    const sectionHeight = section.offsetHeight;
+                    const sectionId = section.getAttribute('id');
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        // Remove active class from all nav links
+                        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+                            link.classList.remove('active');
+                        });
+                        
+                        // Add active class to current section's nav link
+                        const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
+                        if (activeLink) {
+                            activeLink.classList.add('active');
+                            
+                            // Add highlight effect to current section
+                            sections.forEach(s => s.classList.remove('highlight'));
+                            section.classList.add('highlight');
+                        }
+                    }
+                });
+            };
+            
+            // Run animations on page load
+            animateOnScroll();
+            highlightNavigation();
+            
+            // Run animations on scroll
+            window.addEventListener('scroll', function() {
+                animateOnScroll();
+                highlightNavigation();
             });
-
-            navLi.forEach(li => {
-                li.classList.remove('active');
-                if (li.getAttribute('href') === `#${current}`) {
-                    li.classList.add('active');
-                }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === "#") return; // Skip for "#" links
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Add a visual pulse effect
+                        targetElement.classList.add('highlight');
+                        
+                        // Scroll to the target
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80, // Adjust for navbar height
+                            behavior: 'smooth'
+                        });
+                        
+                        // Update URL without page jump
+                        history.pushState(null, null, targetId);
+                        
+                        // Remove highlight after animation
+                        setTimeout(() => {
+                            targetElement.classList.remove('highlight');
+                        }, 2000);
+                    }
+                });
             });
         });
+
+        // Lightbox functionality for Cáceres images (keep existing code)
+        const caceresLinks = document.querySelectorAll('.caceres-img-link');
+        const lightbox = document.getElementById('caceresLightbox');
+        const lightboxImg = document.getElementById('caceresLightboxImg');
+        const lightboxClose = document.getElementById('caceresLightboxClose');
+        caceresLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const img = this.querySelector('img');
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+                lightbox.style.display = 'flex';
+            });
+        });
+        lightboxClose.addEventListener('click', function() {
+            lightbox.style.display = 'none';
+            lightboxImg.src = '';
+        });
+        lightbox.addEventListener('click', function(e) {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+                lightboxImg.src = '';
+            }
+        });
     </script>
-
-    <!-- Lightbox Modal for Cáceres images -->
-<div id="caceresLightbox" style="display:none; position:fixed; z-index:2000; left:0; top:0; width:100vw; height:100vh; background:rgba(0,0,0,0.85); justify-content:center; align-items:center;">
-    <span id="caceresLightboxClose" style="position:absolute; top:30px; right:40px; color:#fff; font-size:3rem; cursor:pointer; z-index:2010;">&times;</span>
-    <img id="caceresLightboxImg" src="" alt="Cáceres" style="max-width:90vw; max-height:85vh; border-radius:12px; box-shadow:0 0 30px #000;">
-</div>
-<script>
-// Lightbox functionality for Cáceres images
-const caceresLinks = document.querySelectorAll('.caceres-img-link');
-const lightbox = document.getElementById('caceresLightbox');
-const lightboxImg = document.getElementById('caceresLightboxImg');
-const lightboxClose = document.getElementById('caceresLightboxClose');
-caceresLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const img = this.querySelector('img');
-        lightboxImg.src = img.src;
-        lightboxImg.alt = img.alt;
-        lightbox.style.display = 'flex';
-    });
-});
-lightboxClose.addEventListener('click', function() {
-    lightbox.style.display = 'none';
-    lightboxImg.src = '';
-});
-lightbox.addEventListener('click', function(e) {
-    if (e.target === lightbox) {
-        lightbox.style.display = 'none';
-        lightboxImg.src = '';
-    }
-});
-</script>
-
 </body>
 </html>
