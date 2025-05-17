@@ -574,6 +574,79 @@ section.visible {
   opacity: 0;
 }
 
+/* Enhanced Target Audience Section */
+.audience-container {
+  margin-top: 1.5rem;
+}
+
+.audience-card {
+  background-color: var(--background);
+  border-radius: var(--radius);
+  padding: 1.8rem 1.5rem;
+  height: 100%;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+.audience-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+.audience-icon-wrapper {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.audience-card:hover .audience-icon-wrapper {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, var(--primary-light), rgba(59, 130, 246, 0.2));
+}
+
+.audience-icon-wrapper i {
+  font-size: 1.8rem;
+  color: var(--primary);
+}
+
+.audience-card h5 {
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.audience-card p {
+  margin-bottom: 0;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.audience-card:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.audience-card:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.audience-card:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
 /* Responsive Adjustments */
 @media (max-width: 992px) {
   .navbar-collapse {
