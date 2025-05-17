@@ -409,33 +409,68 @@
          <section id="contact" class="py-5 bg-light rounded p-4">
             <h2 class="section-title">Contact Us</h2>
 
-            <p class="text-center mb-4">To register in the summer school, please fill out the form below or contact us directly via email.</p>
-            <div class="row justify-content-center mb-5">
-                <div class="col-md-8">
-                    <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
-                        <div class="form-floating mb-3">
-                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                            <label for="name">Your Name</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                            <label for="email">Your Email</label>
-                        </div>
-                        <div class="form-floating mb-3">
-                            <textarea class="form-control" id="message" name="message" placeholder="Your Message" required style="height: 120px"></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                        <div class="text-center">
-                            <button type="submit" class="btn btn-primary">Send Message</button>
-                        </div>
-                    </form>
+            <div class="row justify-content-center mb-4">
+                <div class="col-lg-8">
+                    <p class="text-center mb-4"><i class="fas fa-paper-plane text-primary me-2"></i> To register in the summer school, please fill out the form below or contact us directly via email.</p>
                 </div>
             </div>
 
-            <p class="text-center mb-4">For any inquiries regarding the summer school, please contact the chairs:</p>
-            <div class="text-center">
-                 <p><i class="fas fa-envelope me-2"></i>Roberto Rodríguez Echeverría: <a href="mailto:rre@unex.es">rre@unex.es</a></p>
-                 <p><i class="fas fa-envelope me-2"></i>José María Conejero Manzano: <a href="mailto:chemacm@unex.es">chemacm@unex.es</a></p>
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <div class="card shadow-sm border-0">
+                        <div class="card-body p-4">
+                            <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
+                                            <label for="name"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <div class="form-floating">
+                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
+                                            <label for="email"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="mb-3">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" required style="height: 120px"></textarea>
+                                        <label for="message"><i class="fas fa-comment text-primary me-2"></i>Your Message</label>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary px-4">
+                                        <i class="fas fa-paper-plane me-2"></i>Send Message
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact-chairs p-3 rounded bg-white shadow-sm">
+                        <h5 class="text-center mb-3"><i class="fas fa-users text-primary me-2"></i>Contact the Chairs</h5>
+                        <div class="row text-center">
+                            <div class="col-md-6 mb-2">
+                                <p class="mb-0"><strong>Roberto Rodríguez Echeverría</strong></p>
+                                <p><a href="mailto:rre@unex.es" class="text-decoration-none">
+                                    <i class="fas fa-envelope me-1"></i>rre@unex.es
+                                </a></p>
+                            </div>
+                            <div class="col-md-6 mb-2">
+                                <p class="mb-0"><strong>José María Conejero Manzano</strong></p>
+                                <p><a href="mailto:chemacm@unex.es" class="text-decoration-none">
+                                    <i class="fas fa-envelope me-1"></i>chemacm@unex.es
+                                </a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
