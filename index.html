@@ -123,13 +123,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr><td>09:30</td><td>Registration</td><td>Lecture 3</td><td>Lecture 6</td></tr>
+                        <tr><td>09:30</td><td>Registration</td><td style="white-space: pre-line;">Multi-agents for code generation. 
+                                                                                                  <strong>Jie Zhang</strong></td><td>Oracle</td></tr>
                         <tr><td>10:00</td><td>School Opening</td><td></td><td></td></tr>
-                        <tr><td>10:30</td><td>Lecture 1</td><td>Lecture 4</td><td>Lecture 7</td></tr>
+                        <tr><td>10:30</td><td><strong>Davide Di Ruscio</strong></td><td>IBM</td><td><strong>Massimo Tisi</strong></td></tr>
                         <tr><td>11:30</td><td>Coffee break</td><td>Coffee break</td><td>Coffe break</td></tr>
-                        <tr><td>12:00</td><td>Lecture 2</td><td>Lecture 5</td><td>Lecture 8</td></tr>
+                        <tr><td>12:00</td><td><strong>Jesús M. González Barahona</strong></td><td style="white-space: pre-line;">From workflow-based to fully-agentic applications: 
+                                                                                                                smolagents and LangGraph. 
+                                                                                                                <strong>Antonio García Domínguez</strong></td><td><strong>Merve Astekin</strong></td></tr>
                         <tr><td>13:00</td><td>Lunch</td><td>Lunch</td><td>Lunch</td></tr>
-                        <tr><td>14:30</td><td>Workshop 1</td><td>Workshop 2</td><td>Workshop 3</td></tr>
+                        <tr><td>14:30</td><td style="white-space: pre-line;">Workshop 1. LLMs para TDD. 
+                                            <strong>Jesús M. González-Barahona</strong></td><td style="white-space: pre-line;">Workshop 2. Development of agentic applications 
+                                                                                                              with human-in-the-loop via LangGraph. 
+                                                                                                              <strong>Antonio García Domínguez</strong></td><td style="white-space: pre-line;">Workshop 3. Multi-Agent LLMs and Knowledge Graphs for 
+                                                                                                                                                                              Monitoring and Sustaining Software Systems</td></tr>
                         <tr><td>17:30</td><td></td><td></td><td></td></tr>
                         <tr><td>19:30</td><td></td><td>Tourism activity</td><td></td></tr>
                         <tr><td>20:30</td><td></td><td>Gala Dinner</td><td></td></tr>
@@ -141,33 +148,149 @@
         <section id="speakers" class="py-5">
             <h2 class="section-title">Speakers</h2>
             <p class="text-center text-muted mb-5">(To be announced - Sample data below)</p>
-            <div class="row text-center gy-4"> <div class="col-md-6 col-lg-4 mb-4">
-                    <div class="card h-100">
-                        <img src="https://placehold.co/130x130/3498db/ffffff?text=Dr.+AI" alt="Sample Speaker 1" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+            <div class="row text-center gy-4">
+                <!-- Example for Speaker 1; apply similar changes for other speakers -->
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Davide Di Ruscio"
+                        data-contacto="davide.diruscio@univaq.it"
+                        data-institution="Università degli Studi dell'Aquila"
+                        data-tema="LLMs for SE"
+                        data-shortbio="Davide Di Ruscio is a Full Professor at the DISIM department of the University of L'Aquila. His main research interests are related to several aspects of Software Engineering and Model-Driven Engineering (MDE), including domain-specific modelling languages, model differencing, coupled evolution, and recommendation systems. Davide is on the editorial board of the International Journal on Software and Systems Modeling (SoSyM), of IEEE Software, of the Journal of Object Technology, and of the Business and Information Systems Engineering journal, and he is a regular reviewer of many journals including IEEE Transactions on Software Engineering, Science of Computer Programming, Software and Systems Modeling, and Journal of Systems and Software. Since 2006, Davide has actively contributed to national and international research projects, applying Model-Driven Engineering (MDE) techniques and tools to various application domains. His expertise has been applied to service-based software systems, autonomous systems, mining of open-source systems, and modeling hybrid polystore systems. Notably, he served as a co-leader of one of the work packages in the OSSMETER EU FP7 project and the MANCOOSI EU FP7 project. Recently, he assumed the role of principal investigator for the University of L'Aquila in the EU MOSAICO project."
+                        data-foto="images/speakers/DavideDiRuscio.jpg">
+                        <img src="images/speakers/DavideDiRuscio.jpg" alt="Davide Di Ruscio" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
                         <div class="card-body">
-                            <h5 class="card-title">Dr. Anya Sharma</h5>
-                            <p class="text-muted">Lead AI Researcher, Quantum Leap Labs</p>
-                            <p class="card-text small">Expert in large language models and their application in automated code generation and refactoring.</p>
+                            <h5 class="card-title">Davide Di Ruscio</h5>
+                            <p class="text-muted">Università degli Studi dell'Aquila</p>
+                            <p class="card-text small">Davide Di Ruscio is a Full Professor at the University of L'Aquila, specializing in Software and Model-Driven Engineering. He’s an active researcher, editor, and project lead in areas like domain-specific languages, model evolution, and software recommendation systems.</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
-                     <div class="card h-100">
-                        <img src="https://placehold.co/130x130/e74c3c/ffffff?text=Prof.+SE" alt="Sample Speaker 2" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
-                         <div class="card-body">
-                            <h5 class="card-title">Prof. Ben Carter</h5>
-                            <p class="text-muted">Professor of Software Engineering, Innovate University</p>
-                            <p class="card-text small">Focuses on human-AI collaboration in software testing and the evaluation frameworks for agentic systems.</p>
+                    <div class="card h-100"
+                        data-nombre="Jesús M. González Barahona"
+                        data-contacto="contact2@example.com"
+                        data-institution="Institution 2"
+                        data-tema="Possible Topic 2"
+                        data-shortbio="Short bio excerpt for Speaker 2"
+                        data-foto="https://placehold.co/130x130/e74c3c/ffffff?text=Speaker+2">
+                        <img src="https://placehold.co/130x130/e74c3c/ffffff?text=Speaker+2" alt="Jesús M. González Barahona" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Jesús M. González Barahona</h5>
+                            <p class="text-muted">Institution 2</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 2</p>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4 mb-4">
-                     <div class="card h-100">
-                        <img src="https://placehold.co/130x130/2ecc71/ffffff?text=Eng.+MLOps" alt="Sample Speaker 3" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
-                         <div class="card-body">
-                            <h5 class="card-title">Dr. Lena Petrova</h5>
-                            <p class="text-muted">Principal MLOps Engineer, CodeSynth AI</p>
-                            <p class="card-text small">Specializes in the deployment, monitoring, and continuous improvement of LLM agents in production SE environments.</p>
+                    <div class="card h-100"
+                        data-nombre="Jie M. Zhang"
+                        data-contacto="jie.zhang@kcl.ac.uk"
+                        data-institution="King College’s London, UK"
+                        data-tema="AI4SE"
+                        data-shortbio="Short bio excerpt for Speaker 3"
+                        data-foto="https://placehold.co/130x130/2ecc71/ffffff?text=Speaker+3">
+                        <img src="https://placehold.co/130x130/2ecc71/ffffff?text=Speaker+3" alt="Jie M. Zhang" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Jie M. Zhang</h5>
+                            <p class="text-muted">King College’s London, UK</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 3</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Antonio García Domínguez"
+                        data-contacto="contact4@example.com"
+                        data-institution="University of York, UK"
+                        data-tema="AI4SE"
+                        data-shortbio="Dr. Antonio Garcia-Dominguez is a Senior Lecturer in Software Engineering at the Department of Computer Science of the University of York, and a member of the Automated Software Engineering research group. Antonio's main research interests are model-driven software engineering and software testing. In addition to over 100 peer-reviewed publications in international conferences, journals, and book chapters, Antonio is a core contributor in several related open source projects. These include the Eclipse Epsilon model management languages and tools, the Eclipse Hawk model indexing framework, and the GAmera tool for evolutionary mutation testing. Since January 2025, Antonio is leading a work package in the MOSAICO EU project (https://mosaico-project.eu/) on communities of AI agents for reliable software engineering, which will develop an AI Agent Server Protocol for agent-to-agent communication across these communities."
+                        data-foto="images/speakers/AntonioGarciaDominguez.png">
+                        <img src="images/speakers/AntonioGarciaDominguez.png" alt="Antonio García Domínguez" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Antonio García Domínguez</h5>
+                            <p class="text-muted">University of York, UK</p>
+                            <p class="card-text small">Dr. Antonio Garcia-Dominguez is a Senior Lecturer at the University of York, specializing in model-driven engineering and software testing, and leads AI agent work in the EU MOSAICO project.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Massimo Tisi"
+                        data-contacto="contact5@example.com"
+                        data-institution="IMT Atlantique, Nantes, France"
+                        data-tema="AI4SE"
+                        data-shortbio="Short bio excerpt for Speaker 5"
+                        data-foto="https://placehold.co/130x130/f1c40f/ffffff?text=Speaker+5">
+                        <img src="https://placehold.co/130x130/f1c40f/ffffff?text=Speaker+5" alt="Massimo Tisi" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Massimo Tisi</h5>
+                            <p class="text-muted">IMT Atlantique, Nantes, France</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 5</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Merve Astekin"
+                        data-contacto="merve.astekin@sintef.no"
+                        data-institution="SINTEF Digital, Norway"
+                        data-tema="Topic 6"
+                        data-shortbio="Merve Astekin is a Research Scientist in the Trustworthy Green IoT Software (GIoT) Research Group at SINTEF Digital, Norway. Her research lies at the intersection of sustainable AI and software engineering, with a focus on energy-efficient and trustworthy systems. She has recently contributed to empirical studies on the energy efficiency and performance of Large Language Models (LLMs) on edge devices, and is developing agentic LLM-based methods for intelligent software systems. Prior to joining SINTEF, she was a postdoctoral fellow at Simula Research Laboratory and a long-time researcher at TÜBİTAK BİLGEM in Türkiye, where she contributed to major R&D projects in cloud computing, big data analytics, and software quality. She holds a Ph.D. in Computer Science from Ozyegin University, and B.Sc. and M.Sc. degrees in Computer Engineering from Istanbul Technical University, Türkiye. Her work supports the development of AI-driven software systems for trustworthy and sustainable digital infrastructures."
+                        data-foto="images/speakers/MerveAstekin.png">
+                        <img src="images/speakers/MerveAstekin.png" alt="Merve Astekin" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Merve Astekin</h5>
+                            <p class="text-muted">SINTEF Digital, Norway</p>
+                            <p class="card-text small">Merve Astekin is a Research Scientist at SINTEF Digital, focusing on sustainable AI and energy-efficient software systems, with recent work on LLMs for edge devices and intelligent agentic methods.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Speaker 7 Full Name"
+                        data-contacto="contact7@example.com"
+                        data-institution="Institution 7"
+                        data-tema="Possible Topic 7"
+                        data-shortbio="Short bio excerpt for Speaker 7"
+                        data-foto="https://placehold.co/130x130/1abc9c/ffffff?text=Speaker+7">
+                        <img src="https://placehold.co/130x130/1abc9c/ffffff?text=Speaker+7" alt="Speaker 7" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Speaker 7</h5>
+                            <p class="text-muted">Institution 7</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 7</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Speaker 8 Full Name"
+                        data-contacto="contact8@example.com"
+                        data-institution="Institution 8"
+                        data-tema="Possible Topic 8"
+                        data-shortbio="Short bio excerpt for Speaker 8"
+                        data-foto="https://placehold.co/130x130/34495e/ffffff?text=Speaker+8">
+                        <img src="https://placehold.co/130x130/34495e/ffffff?text=Speaker+8" alt="Speaker 8" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Speaker 8</h5>
+                            <p class="text-muted">Institution 8</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 8</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4 mb-4">
+                    <div class="card h-100"
+                        data-nombre="Speaker 9 Full Name"
+                        data-contacto="contact9@example.com"
+                        data-institution="Institution 9"
+                        data-tema="Possible Topic 9"
+                        data-shortbio="Short bio excerpt for Speaker 9"
+                        data-foto="https://placehold.co/130x130/95a5a6/ffffff?text=Speaker+9">
+                        <img src="https://placehold.co/130x130/95a5a6/ffffff?text=Speaker+9" alt="Speaker 9" class="speaker-img" onerror="this.src='https://placehold.co/130x130/cccccc/ffffff?text=Image+Error'">
+                        <div class="card-body">
+                            <h5 class="card-title">Speaker 9</h5>
+                            <p class="text-muted">Institution 9</p>
+                            <p class="card-text small">Short bio excerpt for Speaker 9</p>
                         </div>
                     </div>
                 </div>
@@ -441,6 +564,9 @@
                     </p>
                     <p class="text-center mb-4">
                         To register in the Summer School, please fill out the form below or contact us directly via email (<a href="mailto:chemacm@unex.es" class="text-primary">chemacm@unex.es</a>).
+                    </p>
+                    <p class="text-center mb-4">
+                        Note: This form uses your default mail client to send the email.
                     </p>
                 </div>
             </div>
@@ -725,5 +851,50 @@
         <img id="caceresLightboxImg" src="" alt="Image Preview" style="max-width:90vw; max-height:85vh; border-radius:8px; box-shadow:0 10px 25px rgba(0,0,0,0.3);">
     </div>
 
+    <!-- New Speaker Modal -->
+    <div class="modal fade" id="speakerModal" tabindex="-1" aria-labelledby="speakerModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="speakerModalLabel">Speaker Details</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <!-- Full speaker info will be inserted here -->
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- New script for speaker modal functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('#speakers .card').forEach(function(card) {
+          card.addEventListener('click', function() {
+            var nombre = this.getAttribute('data-nombre') || this.querySelector('.card-title').innerText;
+            var contacto = this.getAttribute('data-contacto') || '';
+            var institution = this.getAttribute('data-institution') || '';
+            var tema = this.getAttribute('data-tema') || '';
+            var shortBio = this.getAttribute('data-shortbio') || this.querySelector('.card-text').innerText;
+            var foto = this.getAttribute('data-foto') || this.querySelector('img').src;
+            
+            var modalBody = document.querySelector('#speakerModal .modal-body');
+            modalBody.innerHTML = 
+              '<div class="text-center mb-3"><img src="' + foto + '" alt="' + nombre + '" class="img-fluid" style="max-width:150px;"></div>' +
+              '<h5>' + nombre + '</h5>' +
+              '<p><strong>Institution:</strong> ' + institution + '</p>' +
+              '<p><strong>Contact:</strong> ' + contacto + '</p>' +
+              '<p><strong>Topic:</strong> ' + tema + '</p>' +
+              '<p><strong>Bio:</strong> ' + shortBio + '</p>';
+              
+            var speakerModal = new bootstrap.Modal(document.getElementById('speakerModal'));
+            speakerModal.show();
+          });
+        });
+      });
+    </script>
 </body>
 </html>

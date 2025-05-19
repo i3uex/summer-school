@@ -691,6 +691,11 @@ section.visible {
   .hero h1 {
     font-size: 2.2rem;
   }
+
+  #speakers .card {
+    flex: 1 1 calc(33.33% - 1.5rem); /* 3 cards per row on medium screens */
+    max-width: calc(33.33% - 1.5rem);
+  }
 }
 
 @media (max-width: 768px) {
@@ -727,6 +732,11 @@ section.visible {
     font-size: 1.8rem;
     margin-bottom: 1.5rem;
   }
+
+  #speakers .card {
+    flex: 1 1 calc(50% - 1.5rem); /* 2 cards per row on small screens */
+    max-width: calc(50% - 1.5rem);
+  }
 }
 
 @media (max-width: 576px) {
@@ -744,6 +754,11 @@ section.visible {
   
   .agenda-table {
     font-size: 0.85rem;
+  }
+
+  #speakers .card {
+    flex: 1 1 100%; /* 1 card per row on extra small screens */
+    max-width: 100%;
   }
 }
 
