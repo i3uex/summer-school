@@ -33,7 +33,7 @@
                     <li class="nav-item"><a class="nav-link" href="#caceres">Cáceres</a></li>
                     <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
                     <li class="nav-item"><a class="nav-link" href="#accommodation">Accommodation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
                 </ul>
             </div>
         </div>
@@ -430,12 +430,18 @@
             </div>
         </section>
 
-         <section id="contact" class="py-5 bg-light rounded p-4">
-            <h2 class="section-title">Contact Us</h2>
+         <section id="registration" class="py-5 bg-light rounded p-4">
+            <h2 class="section-title">Registration</h2>
 
             <div class="row justify-content-center mb-4">
                 <div class="col-lg-8">
-                    <p class="text-center mb-4"><i class="fas fa-paper-plane text-primary me-2"></i> To register in the summer school, please fill out the form below or contact us directly via email.</p>
+                    <p class="text-center mb-4">
+                        <i class="fas fa-paper-plane text-primary me-2"></i>
+                        The course is limited to 20–25 participants. Applications will be considered on a first-come, first-served basis; however, we reserve the right to decline applications from candidates whose background does not meet the course prerequisites.
+                    </p>
+                    <p class="text-center mb-4">
+                        To register in the Summer School, please fill out the form below or contact us directly via email (<a href="mailto:chemacm@unex.es" class="text-primary">chemacm@unex.es</a>).
+                    </p>
                 </div>
             </div>
 
@@ -446,23 +452,17 @@
                             <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
                                 <div class="row">
                                     <div class="col-md-6 mb-3">
-                                        <div class="form-floating">
-                                            <input type="text" class="form-control" id="name" name="name" placeholder="Your Name" required>
-                                            <label for="name"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
-                                        </div>
+                                        <label for="name" class="form-label"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
+                                        <input type="text" class="form-control" id="name" name="name" required>
                                     </div>
                                     <div class="col-md-6 mb-3">
-                                        <div class="form-floating">
-                                            <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required>
-                                            <label for="email"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
-                                        </div>
+                                        <label for="email" class="form-label"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <div class="form-floating">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Your Message" required style="height: 120px"></textarea>
-                                        <label for="message"><i class="fas fa-comment text-primary me-2"></i>Your Message</label>
-                                    </div>
+                                    <label for="message" class="form-label"><i class="fas fa-comment text-primary me-2"></i>Your Message</label>
+                                    <textarea class="form-control" id="message" name="message" required style="height: 120px"></textarea>
                                 </div>
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-primary px-4">
