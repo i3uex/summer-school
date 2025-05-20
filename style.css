@@ -771,20 +771,20 @@ section.highlight::before {
 }
 
 /* Special formatting for sponsors section */
-#sponsors {
+#sponsors, #organizers {
   background: white;
   box-shadow: var(--shadow-sm);
   border-radius: var(--section-radius);
   padding: 2rem 0;
 }
 
-#sponsors img {
+#sponsors img, #organizers img {
   filter: grayscale(15%);
   transition: all 0.3s ease;
   opacity: 0.9;
 }
 
-#sponsors img:hover {
+#sponsors img:hover, #organizers img:hover {
   filter: grayscale(0%);
   transform: scale(1.05);
   opacity: 1;
