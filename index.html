@@ -94,8 +94,8 @@
             <div class="text-center mt-4">
                 <h5>Chairs:</h5>
                 <!-- Chairs Cards -->
-                <div class="row text-center gy-4 justify-content-center mb-4">
-                    <div class="col-md-6 col-lg-5 mb-4">
+                <div class="row text-center gy-4 justify-content-center mb-4 chairs">
+                    <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100"
                             data-nombre="Roberto Rodríguez Echeverría"
                             data-contacto=""
@@ -112,7 +112,7 @@
                         </div>
                     </div>
                     
-                    <div class="col-md-6 col-lg-5 mb-4">
+                    <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100"
                             data-nombre="José María Conejero"
                             data-contacto=""
@@ -174,7 +174,7 @@
         <section id="speakers" class="py-5">
             <h2 class="section-title">Speakers</h2>
             <p class="text-center text-muted mb-5">(To be announced - Sample data below)</p>
-            <div class="row text-center gy-4 justify-content-center">
+            <div class="row text-center gy-4 justify-content-center speakers-row"">
                 <div class="col-md-6 col-lg-4 mb-4">
                     <div class="card h-100"
                         data-nombre="Davide Di Ruscio"
@@ -348,7 +348,7 @@
                         </div>
                         <div class="col-md-4 mb-4">
                             <div class="audience-card">
-                                <div class="
+                                <div class="audience-icon-wrapper">
                                     <i class="fas fa-laptop-code"></i>
                                 </div>
                                 <h5>Industry Professionals</h5>
@@ -954,6 +954,76 @@
             speakerModal.show();
           });
         });
+      });
+    </script>
+    
+    <!-- Script para normalizar las dimensiones de las imágenes de los ponentes -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // Normalizar dimensiones de las imágenes de ponentes
+        const speakerImages = document.querySelectorAll('.speaker-img');
+        speakerImages.forEach(img => {
+          img.addEventListener('load', function() {
+            this.style.width = '130px';
+            this.style.height = '130px';
+            this.style.objectFit = 'cover';
+          });
+          
+          // También aplicar al instante para imágenes ya cargadas
+          img.style.width = '130px';
+          img.style.height = '130px';
+          img.style.objectFit = 'cover';
+        });
+        
+        // Normalizar altura de las tarjetas
+        const equalizeCardHeights = function() {
+          // Igualar altura de las tarjetas de ponentes
+          const speakerCards = document.querySelectorAll('#speakers .card, .chairs .card');
+          
+          // Primero, asegurarse de que todos los card-body y textos de instituciones sean visibles
+          document.querySelectorAll('#speakers .card-body, .chairs .card-body').forEach(cardBody => {
+            cardBody.style.height = 'auto';
+            cardBody.style.overflow = 'visible';
+          });
+          
+          document.querySelectorAll('#speakers .text-muted, .chairs .text-muted').forEach(institution => {
+            institution.style.whiteSpace = 'normal';
+            institution.style.overflow = 'visible';
+            institution.style.textOverflow = 'unset';
+            institution.style.display = 'block';
+            institution.style.minHeight = '2.6em'; // Espacio para aproximadamente 2 líneas
+          });
+          
+          // Reiniciar alturas de las tarjetas
+          speakerCards.forEach(card => {
+            card.style.height = 'auto';
+          });
+          
+          // Pequeño retraso para asegurar que los cambios de estilo se apliquen
+          setTimeout(() => {
+            let maxHeight = 0;
+            
+            // Encontrar la altura máxima
+            speakerCards.forEach(card => {
+              const height = card.offsetHeight;
+              if (height > maxHeight) {
+                maxHeight = height;
+              }
+            });
+            
+            // Aplicar la altura máxima a todas las tarjetas
+            if (maxHeight > 0) {
+              speakerCards.forEach(card => {
+                card.style.height = maxHeight + 'px';
+              });
+            }
+          }, 50);
+        };
+        
+        // Ejecutar cuando las imágenes se hayan cargado
+        window.addEventListener('load', equalizeCardHeights);
+        // También ejecutar cuando se redimensione la ventana
+        window.addEventListener('resize', equalizeCardHeights);
       });
     </script>
 </body>
