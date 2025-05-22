@@ -98,7 +98,7 @@
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100"
                             data-nombre="Roberto Rodríguez Echeverría"
-                            data-contacto=""
+                            data-contacto="rre@unex.es"
                             data-institution="University of Extremadura"
                             data-tema="LLM-based Agents for SE"
                             data-shortbio="Roberto Rodríguez-Echeverría, PhD, is an Associate Professor of Computer Languages and Systems Department at the University of Extremadura (Spain). He has published more than 60 scientific publications in journals and international conferences. He has also been involved in numerous competitive projects and contracts with institutions and industry. His research interests include Artificial Intelligence (AI), AI in Healthcare and Model-Driven Software Development, among others. Recently, he has been heavily involved in launching a new spin-off, MetrikaMedia, which provides a state-of-the-art SaaS solution for measuring media contents."
@@ -115,7 +115,7 @@
                     <div class="col-md-6 col-lg-4 mb-4">
                         <div class="card h-100"
                             data-nombre="José María Conejero"
-                            data-contacto=""
+                            data-contacto="chemacm@unex.es"
                             data-institution="University of Extremadura"
                             data-tema="LLM-based Agents for SE"
                             data-shortbio="José María Conejero is an Associate Professor in the Department of Computer Languages and Systems Department at the University of Extremadura (Spain). In 2010, he obtained his PhD in Computer Engineering. He has co-authored over 50 articles in prestigious international journals and conferences and has served as a reviewer or program committee member for many other international journals and conferences. His research interests include Artificial Intelligence, Big Data, and Model-Driven Software Development, among others. He has also been involved in numerous competitive research projects, as well as in contracts with both public and private entities. Most recently, he has co-founded MetrikaMedia, a startup and spin-off of the University of Extremadura."
@@ -930,10 +930,11 @@
       </div>
     </div>
 
-    <!-- New script for speaker modal functionality -->
+    <!-- New script for speaker and chair modal functionality -->
     <script>
       document.addEventListener('DOMContentLoaded', function() {
-        document.querySelectorAll('#speakers .card').forEach(function(card) {
+        // Handle both speakers and chairs cards
+        document.querySelectorAll('#speakers .card, .chairs .card').forEach(function(card) {
           card.addEventListener('click', function() {
             var nombre = this.getAttribute('data-nombre') || this.querySelector('.card-title').innerText;
             var contacto = this.getAttribute('data-contacto') || '';
@@ -941,6 +942,10 @@
             var tema = this.getAttribute('data-tema') || '';
             var shortBio = this.getAttribute('data-shortbio') || this.querySelector('.card-text').innerText;
             var foto = this.getAttribute('data-foto') || this.querySelector('img').src;
+            
+            // Update modal title based on whether it's a speaker or chair
+            var modalTitle = card.closest('#speakers') ? 'Speaker Details' : 'Chair Details';
+            document.querySelector('#speakerModal .modal-title').textContent = modalTitle;
             
             var modalBody = document.querySelector('#speakerModal .modal-body');
             modalBody.innerHTML = 
