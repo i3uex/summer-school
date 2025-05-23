@@ -32,8 +32,8 @@
                     <li class="nav-item"><a class="nav-link" href="#caceres">Cáceres</a></li>
                     <li class="nav-item"><a class="nav-link" href="#social">Social</a></li>
                     <li class="nav-item"><a class="nav-link" href="#accommodation">Accommodation</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
                     <li class="nav-item"><a class="nav-link" href="#fee">Fee</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#registration">Registration</a></li>
                 </ul>
             </div>
         </div>
@@ -42,8 +42,12 @@
     <header class="hero">
         <div class="hero-overlay"></div>
         <div class="container position-relative">
-            <h1>1st International Summer School on LLM-based Agents for Software Engineering</h1>
-            <p>1st - 3rd September, 2025 | University of Extremadura, Cáceres, Spain</p>
+            <div class="row">
+                <div class="col-lg-12 mx-auto text-center">
+                    <h1 class="mb-4">1st International Summer School on LLM-based Agents for Software Engineering</h1>
+                    <p class="lead mb-4">September 1-3, 2025 | University of Extremadura, Cáceres, Spain | In-Person</p>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -134,7 +138,7 @@
             </div>
         </section>
 
-        <section id="agenda" class="py-5 bg-light rounded p-4">
+        <section id="agenda" class="py-5">
             <h2 class="section-title">Agenda</h2>
             <p class="text-center text-muted mb-4">(Provisional - Subject to updates)</p>
             <div class="table-responsive">
@@ -402,7 +406,7 @@
             </div>
         </section>
 
-        <section id="caceres" class="py-5 bg-light rounded p-4">
+        <section id="caceres" class="py-5">
             <h2 class="section-title">About Cáceres</h2>
              <p class="text-center mb-4">
                 Discover Cáceres, a magnificent UNESCO World Heritage city founded in 25 BC that seamlessly blends Roman, Islamic, Gothic and Renaissance influences. Its perfectly preserved medieval quarter features imposing city walls, noble houses, and towers that transport visitors back through centuries of Spanish history.
@@ -474,7 +478,7 @@
             </div>
         </section>
 
-        <section id="accommodation" class="py-5 bg-light rounded p-4">
+        <section id="accommodation" class="py-5">
             <h2 class="section-title">Accommodation</h2>
             <p class="text-center mb-4">Cáceres offers a wide range of accommodation options. Special rates may be available for Summer School attendees at partner hotels.</p>
             <div class="row">
@@ -562,26 +566,27 @@
             </div>
         </section>
 
-        <section id="fee" class="py-5 bg-light rounded p-4">
-            <h2 class="section-title">Registration Fee</h2>
+        <section id="fee" class="py-5">
+            <h2 class="section-title text-center">Registration Fee</h2>
+            <div class="text-center">
+                <div class="mx-auto" style="width: 60px; height: 3px; background: #6366f1; margin: 0 auto 40px;"></div>
+            </div>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="card shadow text-center p-4 mt-3 mb-4">
-                        <div class="card-body">
-                            <div class="mb-3">
-                                <i class="fas fa-ticket-alt fa-3x text-primary"></i>
-                            </div>
-                            <h1 class="display-1 fw-bold mb-2" style="letter-spacing: 2px;">FREE</h1>
-                            <div class="mb-3" style="height: 2px; width: 80px; background: #007bff; margin: 10px auto;"></div>
-                            <div class="lead mb-3" style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 2px;">for all participants</div>
-                            <p class="mb-0" style="font-size: 1.1rem;">Thanks to the generous support of our sponsors, registration for the School is <b>completely free</b> for all attendees.</p>
+                    <div class="fee-container text-center mt-2 mb-4">
+                        <div class="icon-circle mb-4">
+                            <i class="fas fa-ticket-alt fa-2x text-primary"></i>
                         </div>
+                        <h1 class="display-1 fw-bold mb-3" style="letter-spacing: 3px; color: #333;">FREE</h1>
+                        <div class="mb-4" style="height: 2px; width: 80px; background: #6366f1; margin: 10px auto;"></div>
+                        <div class="lead mb-4" style="font-size: 1.3rem; text-transform: uppercase; letter-spacing: 2px; color: #6366f1;">for all participants</div>
+                        <p class="mb-0" style="font-size: 1.1rem; max-width: 600px; margin: 0 auto;">Thanks to the generous support of our sponsors, registration for the School is <b>completely free</b> for all attendees.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section id="registration" class="py-5 bg-light rounded p-4">
+        <section id="registration" class="py-5">
             <h2 class="section-title">Registration</h2>
 
             <div class="row justify-content-center mb-4">
@@ -601,37 +606,33 @@
 
             <div class="row justify-content-center mb-4">
                 <div class="col-md-8">
-                    <div class="card shadow-sm border-0">
-                        <div class="card-body p-4">
-                            <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
-                                <div class="row">
-                                    <div class="col-md-6 mb-3">
-                                        <label for="name" class="form-label"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
-                                        <input type="text" class="form-control" id="name" name="name" required>
-                                    </div>
-                                    <div class="col-md-6 mb-3">
-                                        <label for="email" class="form-label"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
-                                        <input type="email" class="form-control" id="email" name="email" required>
-                                    </div>
-                                </div>
+                    <form id="contactForm" action="mailto:chemacm@unex.es" method="post" enctype="text/plain">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label"><i class="fas fa-user text-primary me-2"></i>Your Name</label>
+                                <input type="text" class="form-control" id="name" name="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label"><i class="fas fa-envelope text-primary me-2"></i>Your Email</label>
+                                <input type="email" class="form-control" id="email" name="email" required>
+                            </div>
+                        </div>
                                 <div class="mb-3">
                                     <label for="message" class="form-label"><i class="fas fa-comment text-primary me-2"></i>Your Message</label>
                                     <textarea class="form-control" id="message" name="message" required style="height: 120px"></textarea>
                                 </div>
-                                <div class="text-center">
-                                    <button type="submit" class="btn btn-primary px-4">
-                                        <i class="fas fa-paper-plane me-2"></i>Send Message
-                                    </button>
-                                </div>
-                            </form>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4">
+                                <i class="fas fa-paper-plane me-2"></i>Send Message
+                            </button>
                         </div>
-                    </div>
+                    </form>
                 </div>
             </div>
 
             <div class="row justify-content-center">
                 <div class="col-lg-8">
-                    <div class="contact-chairs p-3 rounded bg-white shadow-sm">
+                    <div class="contact-chairs mt-4">
                         <h5 class="text-center mb-3"><i class="fas fa-users text-primary me-2"></i>Contact the Chairs</h5>
                         <div class="row text-center">
                             <div class="col-md-6 mb-2">
@@ -692,8 +693,13 @@
         </div>
     </footer>
 
-    <!-- Existing Scripts -->
+    <!-- Enhanced Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" class="btn btn-primary" style="display: none; position: fixed; bottom: 20px; right: 20px; z-index: 1000; border-radius: 50%; width: 50px; height: 50px; padding: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -710,36 +716,28 @@
                     navbar.classList.remove('scrolled');
                 }
                 
-                // Animate sections when they enter viewport
+                // Simplemente añadir la clase visible sin animación
                 const sections = document.querySelectorAll('section');
                 sections.forEach(section => {
-                    const sectionTop = section.getBoundingClientRect().top;
-                    const windowHeight = window.innerHeight;
-                    if (sectionTop < windowHeight * 0.85) {
-                        section.classList.add('visible');
-                        
-                        // Animate cards within this section
-                        const cards = section.querySelectorAll('.card');
-                        cards.forEach((card, index) => {
-                            setTimeout(() => {
-                                card.classList.add('visible');
-                            }, 100 * index);
-                        });
-                        
-                        // Animate tables within this section
-                        const tables = section.querySelectorAll('.agenda-table');
-                        tables.forEach(table => {
-                            table.classList.add('visible');
-                        });
-                        
-                        // Animate maps within this section
-                        const maps = section.querySelectorAll('.map-container');
-                        maps.forEach((map, index) => {
-                            setTimeout(() => {
-                                map.classList.add('visible');
-                            }, 200 * index);
-                        });
-                    }
+                    section.classList.add('visible');
+                    
+                    // Añadir visible a las tarjetas sin animación
+                    const cards = section.querySelectorAll('.card');
+                    cards.forEach((card) => {
+                        card.classList.add('visible');
+                    });
+                    
+                    // Añadir visible a las tablas sin animación
+                    const tables = section.querySelectorAll('.agenda-table');
+                    tables.forEach(table => {
+                        table.classList.add('visible');
+                    });
+                    
+                    // Añadir visible a los mapas sin animación
+                    const maps = section.querySelectorAll('.map-container');
+                    maps.forEach((map) => {
+                        map.classList.add('visible');
+                    });
                 });
             };
             
@@ -765,10 +763,6 @@
                         const activeLink = document.querySelector(`.navbar-nav .nav-link[href="#${sectionId}"]`);
                         if (activeLink) {
                             activeLink.classList.add('active');
-                            
-                            // Add highlight effect to current section
-                            sections.forEach(s => s.classList.remove('highlight'));
-                            section.classList.add('highlight');
                         }
                     }
                 });
@@ -794,9 +788,6 @@
                     
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                        // Add a visual pulse effect
-                        targetElement.classList.add('highlight');
-                        
                         // Scroll to the target
                         window.scrollTo({
                             top: targetElement.offsetTop - 80, // Adjust for navbar height
@@ -805,11 +796,6 @@
                         
                         // Update URL without page jump
                         history.pushState(null, null, targetId);
-                        
-                        // Remove highlight after animation
-                        setTimeout(() => {
-                            targetElement.classList.remove('highlight');
-                        }, 2000);
                     }
                 });
             });
@@ -1032,5 +1018,37 @@
         window.addEventListener('resize', equalizeCardHeights);
       });
     </script>
+
+    <!-- Scroll to Top functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        // Show or hide the button based on scroll position
+        const toggleScrollToTopButton = () => {
+          if (window.scrollY > 300) {
+            scrollToTopBtn.style.display = 'block';
+          } else {
+            scrollToTopBtn.style.display = 'none';
+          }
+        };
+        
+        // Scroll to top smooth behavior
+        scrollToTopBtn.addEventListener('click', function() {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        });
+        
+        // Initial check
+        toggleScrollToTopButton();
+        
+        // Check on scroll
+        window.addEventListener('scroll', toggleScrollToTopButton);
+      });
+    </script>
+
+
 </body>
 </html>
