@@ -1,19 +1,8 @@
 // Enhanced Summer School Website Interactivity
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+    // Note: Smooth scrolling is handled by inline JavaScript in index.html
+    // to avoid conflicts and provide better navbar offset handling
 
     // Enhanced scroll-to-top functionality
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
