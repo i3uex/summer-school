@@ -722,7 +722,7 @@ p {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  padding: 1.2rem 0;
+  padding: 0.6rem 0;
   transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   border-bottom: 1px solid var(--border-light);
 }
@@ -774,7 +774,7 @@ p {
 .nav-link {
   font-weight: 600;
   color: var(--text);
-  padding: 0.8rem 1.2rem;
+  padding: 0.5rem 1rem;
   margin: 0 0.2rem;
   border-radius: var(--radius);
   transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -1846,4 +1846,69 @@ section:nth-child(3) { animation-delay: 0.3s; }
   letter-spacing: 0.1em;
   text-transform: uppercase;
   margin-bottom: 1rem;
+}
+
+/* GitHub Copilot Attribution Footer */
+.copilot-footer {
+  background: rgba(249, 250, 251, 0.95);
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
+  margin-top: 4rem;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.copilot-attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: #6b7280;
+  font-family: 'Inter', sans-serif;
+}
+
+.copilot-text {
+  font-weight: 400;
+}
+
+.copilot-logo {
+  width: 20px;
+  height: 20px;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
+}
+
+.copilot-attribution:hover .copilot-logo {
+  opacity: 1;
+}
+
+.copilot-attribution strong {
+  color: #374151;
+  font-weight: 600;
+}
+
+.copilot-agent {
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.025em;
+}
+
+/* Dark mode adjustments for footer */
+@media (prefers-color-scheme: dark) {
+  .copilot-footer {
+    background: rgba(17, 24, 39, 0.95);
+    border-top: 1px solid rgba(75, 85, 99, 0.3);
+  }
+  
+  .copilot-attribution {
+    color: #9ca3af;
+  }
+  
+  .copilot-attribution strong {
+    color: #f3f4f6;
+  }
 }
