@@ -1,8 +1,71 @@
 // Enhanced Summer School Website Interactivity
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Note: Smooth scrolling is handled by inline JavaScript in index.html
-    // to avoid conflicts and provide better navbar offset handling
+    // Smooth scrolling with navbar offset for navigation links
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    const navigationBar = document.querySelector('.navbar');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            
+            if (targetElement) {
+                // Wait a bit for any layout changes, then calculate position
+                setTimeout(() => {
+                    const navbarHeight = navigationBar.offsetHeight;
+                    // Get the container margin-top (mt-5 = 3rem = 48px approx)
+                    const container = targetElement.closest('.container');
+                    const containerMarginTop = container ? parseInt(getComputedStyle(container).marginTop) : 0;
+                    
+                    const elementRect = targetElement.getBoundingClientRect();
+                    const elementTop = elementRect.top + window.pageYOffset;
+                    // Adjust for navbar height and container margin
+                    const targetPosition = elementTop - navbarHeight - 30;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                }, 10);
+                
+                // Close mobile menu if open
+                const navbarToggler = document.querySelector('.navbar-toggler');
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse && navbarCollapse.classList.contains('show') && navbarToggler) {
+                    navbarToggler.click();
+                }
+            }
+        });
+    });
+
+    // Handle "Register Now" button with same offset
+    const registerButtons = document.querySelectorAll('a[href="#registration"]');
+    registerButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetElement = document.getElementById('registration');
+            if (targetElement) {
+                setTimeout(() => {
+                    const navbarHeight = navigationBar.offsetHeight;
+                    const container = targetElement.closest('.container');
+                    const containerMarginTop = container ? parseInt(getComputedStyle(container).marginTop) : 0;
+                    
+                    const elementRect = targetElement.getBoundingClientRect();
+                    const elementTop = elementRect.top + window.pageYOffset;
+                    const targetPosition = elementTop - navbarHeight - 30;
+                    
+                    window.scrollTo({
+                        top: Math.max(0, targetPosition),
+                        behavior: 'smooth'
+                    });
+                }, 10);
+            }
+        });
+    });
 
     // Enhanced scroll-to-top functionality
     const scrollToTopBtn = document.querySelector('.scroll-to-top');
