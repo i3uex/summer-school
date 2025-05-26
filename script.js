@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const forms = document.querySelectorAll('form');
     forms.forEach(form => {
         form.addEventListener('submit', function(e) {
-            const inputs = form.querySelectorAll('input[required], textarea[required]');
+            const inputs = form.querySelectorAll('input[required], textarea[required], select[required]');
             let isValid = true;
 
             inputs.forEach(input => {
@@ -152,8 +152,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (!isValid) {
                 e.preventDefault();
-                // Show error message
                 showNotification('Please fill in all required fields', 'error');
+                return;
+            }
+
+            // Format mailto body for registration form
+            if (form.action.startsWith('mailto:')) {
+                e.preventDefault();
+                const name = form.querySelector('[name="name"]').value.trim();
+                const email = form.querySelector('[name="email"]').value.trim();
+                const affiliation = form.querySelector('[name="affiliation"]').value.trim();
+                const position = form.querySelector('[name="position"]').value.trim();
+                const motivation = form.querySelector('[name="motivation"]').value.trim();
+                const scholarship = form.querySelector('[name="accommodationScholarship"]').value;
+                let scholarshipText = scholarship === 'yes' ? 'Yes, I would like to apply' : 'No, I do not need accommodation support';
+                
+                const subject = encodeURIComponent('LLMA4SE 2025 Summer School Registration');
+                const body = encodeURIComponent(
+                    `Full Name: ${name}\n` +
+                    `Email: ${email}\n` +
+                    `Institution/Organization: ${affiliation}\n` +
+                    `Position/Role: ${position}\n` +
+                    `Motivation & Expectations: ${motivation}\n` +
+                    `Accommodation Scholarship: ${scholarshipText}`
+                );
+                const mailto = `${form.action}?subject=${subject}&body=${body}`;
+                window.location.href = mailto;
             }
         });
     });
