@@ -36,8 +36,8 @@
   --gradient-secondary: linear-gradient(135deg, var(--accent), var(--primary));
   --gradient-soft: linear-gradient(135deg, var(--primary-light), var(--accent-light));
   --gradient-hero: linear-gradient(135deg, rgba(26, 35, 126, 0.95), rgba(13, 71, 161, 0.9));
-  --section-margin: 5rem 0;
-  --section-padding: 4rem 0;
+  --section-margin: 3rem 0;
+  --section-padding: 3rem 2rem;
   --soft-bg: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.6));
 }
 
@@ -56,6 +56,8 @@ body {
 /* Enhanced container styles */
 .container {
   position: relative;
+  max-width: 1400px !important; /* Aumentamos el ancho máximo del contenedor */
+  width: 95% !important; /* Usamos más espacio horizontal disponible */
 }
 
 /* Improved spacing between sections */
@@ -1086,10 +1088,12 @@ section {
   margin: var(--section-margin);
   padding: var(--section-padding);
   border-radius: var(--radius-xl);
-  overflow: hidden;
+  overflow: visible; /* Cambiamos a visible para evitar cortes */
   background: #ffffff;
   box-shadow: var(--shadow-sm);
   border: 1px solid var(--border-light);
+  width: 100%;
+  max-width: none; /* Removemos restricciones de ancho máximo */
 }
 
 /* Alternate section backgrounds */
@@ -1999,5 +2003,84 @@ section:nth-child(3) { animation-delay: 0.3s; }
   .copilot-agent {
     font-size: 0.7rem;
     padding: 0.15rem 0.5rem;
+  }
+}
+
+/* Sponsor Logo Styles - Enhanced prominence */
+.sponsor-logo-main {
+  max-width: 600px !important;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sponsor-logo-main:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.15));
+}
+
+.sponsor-logo-secondary {
+  max-width: 350px !important;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.1));
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.sponsor-logo-secondary:hover {
+  transform: scale(1.02);
+  filter: drop-shadow(0 6px 20px rgba(0, 0, 0, 0.15));
+}
+
+/* Sponsor section styling */
+#sponsors {
+  background: var(--soft-bg);
+  padding: 4rem 0;
+  border-radius: var(--radius-lg);
+  margin: 2rem 0;
+}
+
+#sponsors .section-title {
+  margin-bottom: 3rem;
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+
+/* Responsive adjustments for sponsor logos */
+@media (max-width: 1200px) {
+  .sponsor-logo-main {
+    max-width: 500px !important;
+  }
+  
+  .sponsor-logo-secondary {
+    max-width: 300px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sponsor-logo-main {
+    max-width: 400px !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  .sponsor-logo-secondary {
+    max-width: 250px !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  #sponsors .d-flex {
+    flex-direction: column;
+    gap: 2rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .sponsor-logo-main {
+    max-width: 320px !important;
+  }
+  
+  .sponsor-logo-secondary {
+    max-width: 200px !important;
   }
 }
