@@ -673,7 +673,7 @@
                         </div>
                         <div class="col-6">
                             <div class="stat-card">
-                                <div class="stat-number">25</div>
+                                <div class="stat-number">20</div>
                                 <div class="stat-label">Max Participants</div>
                             </div>
                         </div>
@@ -757,6 +757,10 @@
         <section id="accommodation" class="py-5">
             <h2 class="section-title">Accommodation</h2>
             <p class="text-center mb-4">Cáceres offers a wide range of accommodation options. Special rates may be available for Summer School attendees at partner hotels.</p>
+            <p class="text-center mb-4" style="background: linear-gradient(90deg, #e0e7ff 0%, #f0f4ff 100%); color:#1a237e; font-weight:600; border-radius: 8px; border: 2px solid #6366f1; box-shadow: 0 2px 12px rgba(99,102,241,0.08); padding: 18px 10px; max-width: 700px; margin: 0 auto 1.5rem auto;">
+    <i class="fas fa-bed me-2"></i>
+    We are working to offer scholarships that may cover part of the students' accommodation costs. If you are interested in applying for one of these scholarships, please indicate this in the registration form.
+</p>
             <div class="row">
                 <div class="col-md-6">
                     <h5>Partner Hotels (Examples):</h5>
@@ -875,7 +879,7 @@
                         <div class="registration-details">
                             <div class="alert alert-info d-inline-block mb-4" role="alert">
                                 <i class="fas fa-info-circle me-2"></i>
-                                <strong>Limited to 20–25 participants</strong> • First-come, first-served basis
+                                <strong>Limited to 15–20 participants</strong> • First-come, first-served basis
                             </div>
                         </div>
                     </div>
@@ -940,6 +944,17 @@
                                     </label>
                                     <textarea class="form-control" id="motivation" name="motivation" rows="4" 
                                               placeholder="Tell us about your motivation for attending and what you expect to learn..."></textarea>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <label for="accommodationScholarship" class="form-label">
+                                        <i class="fas fa-bed me-2"></i>Would you like to apply for an accommodation scholarship?
+                                    </label>
+                                    <select class="form-select" id="accommodationScholarship" name="accommodationScholarship" required>
+                                        <option value="" selected disabled>Select an option</option>
+                                        <option value="yes">Yes, I would like to apply</option>
+                                        <option value="no">No, I do not need accommodation support</option>
+                                    </select>
                                 </div>
                                 
                                 <div class="text-center">
