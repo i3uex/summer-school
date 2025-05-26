@@ -163,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 const email = form.querySelector('[name="email"]').value.trim();
                 const affiliation = form.querySelector('[name="affiliation"]').value.trim();
                 const position = form.querySelector('[name="position"]').value.trim();
+                const education = form.querySelector('[name="education"]').value; // Added education field
                 const motivation = form.querySelector('[name="motivation"]').value.trim();
                 const scholarship = form.querySelector('[name="accommodationScholarship"]').value;
                 let scholarshipText = scholarship === 'yes' ? 'Yes, I would like to apply' : 'No, I do not need accommodation support';
@@ -173,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     `Email: ${email}\n` +
                     `Institution/Organization: ${affiliation}\n` +
                     `Position/Role: ${position}\n` +
+                    `Highest Level of Education: ${education}\n` + // Added education to mailto body
                     `Motivation & Expectations: ${motivation}\n` +
                     `Accommodation Scholarship: ${scholarshipText}`
                 );
