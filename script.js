@@ -159,11 +159,12 @@ document.addEventListener('DOMContentLoaded', function() {
             // Format mailto body for registration form
             if (form.action.startsWith('mailto:')) {
                 e.preventDefault();
-                const name = form.querySelector('[name="name"]').value.trim();
+                const name = form.querySelector('[name="fullName"]').value.trim();
                 const email = form.querySelector('[name="email"]').value.trim();
-                const affiliation = form.querySelector('[name="affiliation"]').value.trim();
+                const institution = form.querySelector('[name="institution"]').value.trim();
+                const country = form.querySelector('[name="country"]').value.trim();
                 const position = form.querySelector('[name="position"]').value.trim();
-                const education = form.querySelector('[name="education"]').value; // Added education field
+                const education = form.querySelector('[name="education"]').value;
                 const motivation = form.querySelector('[name="motivation"]').value.trim();
                 const scholarship = form.querySelector('[name="accommodationScholarship"]').value;
                 let scholarshipText = scholarship === 'yes' ? 'Yes, I would like to apply' : 'No, I do not need accommodation support';
@@ -172,9 +173,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 const body = encodeURIComponent(
                     `Full Name: ${name}\n` +
                     `Email: ${email}\n` +
-                    `Institution/Organization: ${affiliation}\n` +
+                    `Institution: ${institution}\n` +
+                    `Country: ${country}\n` +
                     `Position/Role: ${position}\n` +
-                    `Highest Level of Education: ${education}\n` + // Added education to mailto body
+                    `Highest Level of Education: ${education}\n` +
                     `Motivation & Expectations: ${motivation}\n` +
                     `Accommodation Scholarship: ${scholarshipText}`
                 );
