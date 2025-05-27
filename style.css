@@ -1368,7 +1368,7 @@ section:nth-child(3) { animation-delay: 0.3s; }
   position: relative;
   overflow: hidden;
   transition: var(--transition-spring);
-  cursor: pointer;
+  cursor: default;
 }
 
 .key-topic-card::before {
@@ -1693,7 +1693,7 @@ section:nth-child(3) { animation-delay: 0.3s; }
   position: relative;
   overflow: hidden;
   transition: var(--transition-spring);
-  cursor: pointer;
+  cursor: default;
 }
 
 .audience-card::before {
@@ -2083,4 +2083,210 @@ section:nth-child(3) { animation-delay: 0.3s; }
   .sponsor-logo-secondary {
     max-width: 200px !important;
   }
+}
+
+/* Text Primary Color Matching Buttons */
+.text-primary {
+  color: #3b82f6 !important;
+}
+
+/* Modal Padding Enhancement */
+.modal-body {
+  padding: 16px 42px !important;
+}
+
+.modal-header {
+  padding: 16px 42px !important;
+}
+
+.modal-footer {
+  padding: 16px 42px !important;
+}
+
+/* Standardize modal images - square and circular */
+.modal-body img {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  border: 3px solid var(--primary) !important;
+  box-shadow: var(--shadow-lg) !important;
+}
+
+/* Campus Map Styling */
+.map-container {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 2px solid var(--primary-light);
+}
+
+.map-container iframe {
+    border-radius: 12px;
+}
+
+/* About Cáceres Images Standardization */
+.caceres-img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 3px solid var(--primary-light);
+}
+
+.caceres-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.3);
+}
+
+.caceres-img-link {
+    display: block;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.caceres-photo-credit {
+    text-align: center;
+    font-style: italic;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 1rem;
+}
+
+.caceres-photo-credit a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.caceres-photo-credit a:hover {
+    color: var(--primary) !important;
+    text-decoration: underline !important;
+}
+
+/* Social Events Cards - Same treatment as Key Topics and Target Audience */
+.social-event-card {
+    cursor: default !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.social-event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Standardize Social Events icon colors */
+#social .card-title i {
+    color: var(--primary) !important;
+}
+
+/* Accommodation Section Styling */
+.accommodation-category-title {
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text);
+}
+
+.accommodation-card {
+    border: 2px solid var(--primary-light);
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accommodation-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.15);
+}
+
+.accommodation-card h6 {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+.accommodation-map {
+    margin: 1rem 0;
+}
+
+.residence-option {
+    padding: 0.75rem;
+    background: var(--primary-light);
+    border-radius: 8px;
+    border-left: 4px solid var(--primary);
+}
+
+.residence-option strong {
+    color: var(--primary);
+    display: block;
+    margin-bottom: 0.25rem;
+}
+
+/* Standardize Submit Button Color */
+.btn-primary,
+button[type="submit"].btn-primary,
+input[type="submit"].btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+    color: white !important;
+}
+
+.btn-primary:hover,
+button[type="submit"].btn-primary:hover,
+input[type="submit"].btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    color: white !important;
+}
+
+/* Logo Links Styling */
+.organizer-logo-link,
+.sponsor-logo-link {
+    display: inline-block;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-decoration: none;
+}
+
+.organizer-logo-link:hover,
+.sponsor-logo-link:hover {
+    transform: scale(1.05);
+    opacity: 0.8;
+}
+
+.organizer-logo-link img,
+.sponsor-logo-link img {
+    transition: filter 0.3s ease;
+}
+
+.organizer-logo-link:hover img,
+.sponsor-logo-link:hover img {
+    filter: brightness(1.1);
+}
+
+/* Badge styling standardization */
+.badge {
+    background-color: #3b82f6 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px;
+    font-weight: 500;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.badge:hover {
+    background-color: #2563eb !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.hero-badges .badge {
+    font-size: 0.875rem;
+    padding: 10px 18px;
+    margin: 0.25rem;
+    display: inline-flex;
+    align-items: center;
+    background-color: #3b82f6 !important;
+    color: white !important;
+}
+
+.hero-badges .badge i {
+    margin-right: 6px;
 }
