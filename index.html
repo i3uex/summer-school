@@ -1162,17 +1162,23 @@
                 highlightNavigation();
             });
             
-            // Smooth scroll for anchor links with mobile menu auto-close
+            // Unified smooth scroll for all anchor links including Learn More button
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function(e) {
                     e.preventDefault();
                     
                     const targetId = this.getAttribute('href');
-                    if (targetId === "#") return; // Skip for "#" links
+                    if (targetId === "#" || targetId === "#top") {
+                        // Handle scroll to top
+                        window.scrollTo({
+                            top: 0,
+                            behavior: 'smooth'
+                        });
+                        return;
+                    }
                     
                     // Close mobile menu if open
                     const navbarCollapse = document.querySelector('.navbar-collapse');
-                    const navbarToggler = document.querySelector('.navbar-toggler');
                     if (navbarCollapse && navbarCollapse.classList.contains('show')) {
                         const bsCollapse = new bootstrap.Collapse(navbarCollapse, {
                             toggle: false
@@ -1180,25 +1186,27 @@
                         bsCollapse.hide();
                     }
                     
-                   
-                    
-                   
-                    
-                   
-                    
-                   
-                    
                     const targetElement = document.querySelector(targetId);
-                   
                     if (targetElement) {
-                        // Scroll to the target
-                        window.scrollTo({
-                            top: targetElement.offsetTop - 80, // Adjust for navbar height
-                            behavior: 'smooth'
-                        });
-                        
-                        // Update URL without page jump
-                        history.pushState(null, null, targetId);
+                        // Wait a bit for any layout changes, then calculate position
+                        setTimeout(() => {
+                            const navbar = document.querySelector('.navbar');
+                            const navbarHeight = navbar ? navbar.offsetHeight : 70;
+                            
+                            // Get the current scroll position and target position
+                            const elementRect = targetElement.getBoundingClientRect();
+                            const elementTop = elementRect.top + window.pageYOffset;
+                            // Use consistent offset calculation with script.js
+                            const targetPosition = elementTop - navbarHeight - 30;
+                            
+                            window.scrollTo({
+                                top: Math.max(0, targetPosition),
+                                behavior: 'smooth'
+                            });
+                            
+                            // Update URL without page jump
+                            history.pushState(null, null, targetId);
+                        }, 10);
                     }
                 });
             });

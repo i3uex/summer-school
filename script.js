@@ -1,8 +1,8 @@
 // Enhanced Summer School Website Interactivity
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Smooth scrolling with navbar offset for navigation links
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    // Smooth scrolling with navbar offset for navigation links only
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link[href^="#"]');
     const navigationBar = document.querySelector('.navbar');
     
     navLinks.forEach(link => {
