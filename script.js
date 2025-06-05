@@ -1,3 +1,27 @@
+// Mobile Navigation Enhancement
+document.addEventListener('DOMContentLoaded', function() {
+    // Add mobile menu touch handling
+    const navbarToggler = document.querySelector('.navbar-toggler');
+    const navbarCollapse = document.querySelector('.navbar-collapse');
+    
+    if (navbarToggler && navbarCollapse) {
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(e) {
+            if (window.innerWidth <= 991 && 
+                navbarCollapse.classList.contains('show') && 
+                !navbarToggler.contains(e.target) && 
+                !navbarCollapse.contains(e.target)) {
+                navbarToggler.click();
+            }
+        });
+        
+        // Prevent menu from closing when clicking inside
+        navbarCollapse.addEventListener('click', function(e) {
+            e.stopPropagation();
+        });
+    }
+});
+
 // Enhanced Summer School Website Interactivity
 document.addEventListener('DOMContentLoaded', function() {
     
