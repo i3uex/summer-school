@@ -821,54 +821,318 @@ p {
   }
 }
 
-@media (max-width: 576px) {
-  .hero-floating-code {
-    font-size: 9px;
-    padding: 0.3rem;
-    max-width: 240px;
+/* ================================================
+   COMPREHENSIVE MOBILE RESPONSIVE IMPROVEMENTS
+   ================================================ */
+
+/* Mobile First - Global Responsive Base */
+@media (max-width: 991px) {
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
   }
   
-  .hero-binary-rain-1,
-  .hero-binary-rain-2 {
-    font-size: 8px;
-    padding: 0.4rem;
-    max-width: 180px;
+  section {
+    padding: 2rem 1rem !important;
+    margin: 2rem 0 !important;
   }
   
-  .hero-programming-symbols {
-    font-size: 8px;
-    padding: 0.5rem;
-    max-width: 200px;
+  .section-title {
+    font-size: clamp(1.5rem, 5vw, 2rem) !important;
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* Hero Section Mobile Fixes */
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 80px !important;
+    min-height: 70vh !important;
   }
   
-  .hero-floating-function {
-    font-size: 10px;
-    padding: 0.5rem 0.8rem;
+  .hero-title-main {
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+  }
+  
+  .hero-title-focus {
+    font-size: clamp(2rem, 7vw, 2.8rem) !important;
+  }
+  
+  .hero-title-domain {
+    font-size: clamp(1.6rem, 5.5vw, 2.2rem) !important;
+  }
+  
+  .hero-acronym {
+    font-size: clamp(1rem, 4vw, 1.4rem) !important;
+    letter-spacing: 0.1em !important;
+  }
+  
+  .hero-details {
+    flex-direction: column !important;
+    gap: 1rem !important;
+  }
+  
+  .hero-detail-item {
+    padding: 0.6rem 1rem !important;
+    font-size: 0.9rem !important;
+    width: 100% !important;
+    max-width: 300px !important;
+  }
+  
+  .hero-badges {
+    text-align: center !important;
+  }
+  
+  .hero-badges .badge {
+    font-size: 0.8rem !important;
+    padding: 8px 12px !important;
+    margin: 0.2rem !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 180px !important;
+    background-color: #3b82f6 !important;
+    color: white !important;
+    border-radius: 20px !important;
+  }
+  
+  /* Hide complex hero animations on mobile for performance */
+  .hero-animated-background {
+    display: none !important;
+  }
+}
+
+/* Navigation Mobile Fixes */
+@media (max-width: 991px) {
+  .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .navbar-brand img {
+    height: 36px !important;
+    margin-right: 8px !important;
+  }
+  
+  .navbar-brand small {
+    font-size: 0.7rem !important;
+  }
+  
+  .navbar-nav {
+    padding-top: 1rem !important;
+    text-align: center !important;
+  }
+  
+  .nav-link {
+    padding: 0.8rem 1rem !important;
+    margin: 0.2rem 0 !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Cards and Grid Mobile Fixes */
+@media (max-width: 768px) {
+  .card {
+    margin-bottom: 1.5rem !important;
+    border-radius: 12px !important;
+  }
+  
+  .card-body {
+    padding: 1.5rem !important;
+  }
+  
+  .card-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-text {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  /* Force single column layout on mobile */
+  .row > [class*="col-"] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Speaker Cards Mobile Fixes */
+@media (max-width: 768px) {
+  .speaker-img {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 1rem auto 1rem !important;
+  }
+  
+  #speakers .card, 
+  .chairs .card {
+    height: auto !important;
+    min-height: unset !important;
+  }
+  
+  #speakers .card-body, 
+  .chairs .card-body {
+    padding: 1.5rem 1rem !important;
+    min-height: unset !important;
+    text-align: center !important;
+  }
+  
+  #speakers .text-muted,
+  .chairs .text-muted {
+    font-size: 0.85rem !important;
+    min-height: unset !important;
+    margin-bottom: 0.8rem !important;
+  }
+}
+
+/* Key Topics and Audience Cards Mobile Fixes */
+@media (max-width: 768px) {
+  .key-topic-card,
+  .audience-card {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .key-topic-icon-wrapper,
+  .audience-icon-wrapper {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .key-topic-icon-wrapper i,
+  .audience-icon-wrapper i {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Agenda Table Mobile Fixes */
+@media (max-width: 768px) {
+  .agenda-table-wrapper {
+    position: relative;
+    margin-bottom: 3rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agenda-table {
+    font-size: 0.85rem !important;
+    min-width: 650px; /* Force horizontal scroll */
+    margin: 0 !important;
+    white-space: nowrap;
+  }
+  
+  .agenda-table th,
+  .agenda-table td {
+    padding: 0.75rem 0.5rem !important;
+    vertical-align: top !important;
+  }
+  
+  .agenda-table th:first-child,
+  .agenda-table td:first-child {
+    min-width: 80px !important;
+    max-width: 80px !important;
+    position: sticky;
+    left: 0;
+    background: var(--primary) !important;
+    color: white !important;
+    z-index: 10;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .agenda-table td:first-child {
+    background: var(--primary-dark) !important;
+    font-weight: 600;
+  }
+  
+  /* Allow text wrapping for content cells on mobile */
+  .agenda-table td:not(:first-child) {
+    white-space: normal !important;
+    word-wrap: break-word !important;
+    hyphens: auto;
+    min-width: 180px;
     max-width: 220px;
+    line-height: 1.4 !important;
   }
   
-  .hero-neural-network {
-    font-size: 7px;
-    padding: 0.5rem;
-    max-width: 160px;
-    top: 50%;
-    right: 5%;
+  /* Make speaker names more readable on mobile */
+  .agenda-table strong {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.9rem;
   }
   
-  .hero-agent-workflow {
-    font-size: 8px;
-    padding: 0.5rem;
+  /* Scroll indicator for mobile tables */
+  .agenda-table-wrapper::after {
+    content: "← Scroll horizontally to see more →";
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-style: italic;
+    white-space: nowrap;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    border: 1px solid var(--border-light);
+  }
+}
+
+/* Extra small devices - even more compact table */
+@media (max-width: 576px) {
+  .agenda-table {
+    font-size: 0.75rem !important;
+    min-width: 550px;
+  }
+  
+  .agenda-table th,
+  .agenda-table td {
+    padding: 0.5rem 0.3rem !important;
+  }
+  
+  .agenda-table th:first-child,
+  .agenda-table td:first-child {
+    min-width: 70px !important;
+    max-width: 70px !important;
+    font-size: 0.7rem !important;
+  }
+  
+  .agenda-table td:not(:first-child) {
+    min-width: 150px;
     max-width: 180px;
-    top: 15%;
-    left: 3%;
+    font-size: 0.7rem !important;
+    line-height: 1.3 !important;
   }
   
-  .hero-llm-prompt {
-    font-size: 7px;
-    padding: 0.5rem;
-    max-width: 170px;
-    bottom: 25%;
-    right: 2%;
+  .agenda-table strong {
+    font-size: 0.75rem !important;
+    margin-bottom: 0.15rem;
+  }
+  
+  /* Badge fixes for very small screens */
+  .hero-badges {
+    text-align: center !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-badges .badge {
+    font-size: 0.7rem !important;
+    padding: 6px 10px !important;
+    margin: 0.15rem !important;
+    max-width: 140px !important;
+  }
+  
+  .hero-badges .badge i {
+    font-size: 0.8rem;
+    margin-right: 4px;
   }
 }
 
@@ -1592,6 +1856,47 @@ section:nth-child(3) { animation-delay: 0.3s; }
   font-weight: 700;
 }
 
+/* ================================================
+   AGENDA TABLE CONTAINER ENHANCEMENTS
+   ================================================ */
+
+/* Ensure the agenda wrapper has proper mobile behavior */
+.agenda-table-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .agenda-table-wrapper {
+    margin: 0 -1rem 3rem -1rem; /* Extend to container edges on mobile */
+    border-radius: 0;
+  }
+  
+  /* Improve table readability on mobile */
+  .agenda-table tbody tr:hover {
+    background: var(--primary-light) !important;
+    transform: none !important; /* Disable transform on mobile for better performance */
+  }
+  
+  /* Ensure sticky column works properly */
+  .agenda-table th:first-child::after,
+  .agenda-table td:first-child::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -1px;
+    bottom: 0;
+    width: 1px;
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+/* ================================================
+   END AGENDA TABLE ENHANCEMENTS
+   ================================================ */
+
 /* Enhanced Speaker Images */
 .speaker-img {
   width: 150px;
@@ -2060,28 +2365,46 @@ section:nth-child(3) { animation-delay: 0.3s; }
 
 @media (max-width: 768px) {
   .sponsor-logo-main {
-    max-width: 400px !important;
+    max-width: 350px !important;
     margin-bottom: 2rem !important;
-  }
-  
-  .sponsor-logo-secondary {
-    max-width: 250px !important;
-    margin-bottom: 2rem !important;
-  }
-  
-  #sponsors .d-flex {
-    flex-direction: column;
-    gap: 2rem !important;
-  }
-}
-
-@media (max-width: 480px) {
-  .sponsor-logo-main {
-    max-width: 320px !important;
   }
   
   .sponsor-logo-secondary {
     max-width: 200px !important;
+    margin-bottom: 2rem !important;
+  }
+  
+  #sponsors .d-flex {
+    flex-direction: column !important;
+    gap: 2rem !important;
+    align-items: center !important;
+  }
+  
+  #sponsors {
+    padding: 3rem 1rem !important;
+  }
+  
+  .sponsor-logo-link {
+    display: block !important;
+    text-align: center !important;
+    width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .sponsor-logo-main {
+    max-width: 280px !important;
+    padding: 1rem;
+  }
+  
+  .sponsor-logo-secondary {
+    max-width: 160px !important;
+    padding: 0.5rem;
+  }
+  
+  #sponsors .section-title {
+    font-size: 2rem !important;
+    margin-bottom: 2rem !important;
   }
 }
 
@@ -2269,6 +2592,10 @@ input[type="submit"].btn-primary:hover {
     font-weight: 500;
     border-radius: 20px;
     transition: all 0.3s ease;
+    font-size: 0.875rem;
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
 }
 
 .badge:hover {
@@ -2289,4 +2616,487 @@ input[type="submit"].btn-primary:hover {
 
 .hero-badges .badge i {
     margin-right: 6px;
+    flex-shrink: 0;
 }
+
+/* ================================================
+   MOBILE NAVIGATION AND HERO IMPROVEMENTS
+   ================================================ */
+
+/* Enhanced mobile navigation */
+@media (max-width: 991px) {
+  .navbar-toggler {
+    border: 2px solid var(--primary) !important;
+    border-radius: 8px !important;
+    padding: 0.5rem !important;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(26, 35, 126, 0.25) !important;
+  }
+  
+  .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%2826, 35, 126, 0.75%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+  }
+}
+
+/* Mobile hero background simplified */
+@media (max-width: 768px) {
+  .hero {
+    background: linear-gradient(135deg, rgba(26, 35, 126, 0.95), rgba(13, 71, 161, 0.9)) !important;
+    background-attachment: scroll !important;
+  }
+  
+  .hero::before {
+    background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1), transparent 70%) !important;
+  }
+}
+
+/* Improved mobile scroll indicator */
+@media (max-width: 768px) {
+  .hero::after {
+    content: "↓ Scroll down to explore ↓";
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9rem;
+    animation: bounce 2s infinite;
+    text-align: center;
+    font-weight: 500;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateX(-50%) translateY(0);
+    }
+    40% {
+      transform: translateX(-50%) translateY(-10px);
+    }
+    60% {
+      transform: translateX(-50%) translateY(-5px);
+    }
+  }
+}
+
+/* Mobile section spacing improvements */
+@media (max-width: 768px) {
+  section {
+    border-radius: 8px !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1) !important;
+  }
+  
+  section:nth-child(even) {
+    background: linear-gradient(135deg, rgba(248, 250, 252, 0.8), rgba(241, 245, 249, 0.6)) !important;
+  }
+  
+  .section-title::before {
+    width: 60px !important;
+  }
+  
+  .section-title::after {
+    width: 20px !important;
+  }
+}
+
+/* Mobile-specific typography improvements */
+@media (max-width: 768px) {
+  .lead {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem !important;
+    line-height: 1.6 !important;
+    margin-bottom: 1.2rem !important;
+  }
+  
+  .small, small {
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Mobile modal improvements */
+@media (max-width: 768px) {
+  .modal-dialog {
+    margin: 10px;
+    max-width: calc(100vw - 20px);
+  }
+  
+  .modal-content {
+    border-radius: 12px;
+    max-height: 90vh;
+    overflow-y: auto;
+  }
+  
+  .modal-header {
+    padding: 16px;
+    border-bottom: 1px solid #e9ecef;
+  }
+  
+  .modal-body {
+    padding: 16px;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .modal-footer {
+    padding: 16px;
+    border-top: 1px solid #e9ecef;
+  }
+  
+  .modal .btn-close {
+    padding: 12px;
+    margin: -12px -12px -12px auto;
+  }
+}
+
+/* Mobile Image Gallery Improvements */
+@media (max-width: 768px) {
+    .speaker-image,
+    .team-image {
+        width: 120px;
+        height: 120px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin: 0 auto 1rem;
+        display: block;
+    }
+    
+    /* Responsive images in content */
+    .modal-body img,
+    .content img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 8px;
+        margin: 8px 0;
+    }
+}
+
+/* Mobile Typography Improvements */
+@media (max-width: 768px) {
+    /* Ensure readable font sizes */
+    body {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    
+    .card-text {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+    
+    .small, small {
+        font-size: 14px;
+    }
+    
+    /* Improve contrast for better readability */
+    .text-muted {
+        color: #495057 !important;
+    }
+}
+
+/* ================================================
+   BADGE FIXES FOR MOBILE RESPONSIVENESS
+   ================================================ */
+
+/* Override Bootstrap badge classes that might conflict */
+.badge.bg-light {
+  background-color: #3b82f6 !important;
+  color: white !important;
+}
+
+.badge.text-primary {
+  color: white !important;
+}
+
+/* Ensure badges are properly sized and visible on all screens */
+@media (max-width: 991px) {
+  .hero-badges {
+    margin-bottom: 2rem !important;
+    padding: 0 1rem;
+  }
+  
+  .hero-badges .badge {
+    margin: 0.3rem 0.2rem !important;
+    font-size: 0.8rem !important;
+    padding: 8px 14px !important;
+    line-height: 1.2 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-badges .badge {
+    display: block !important;
+    margin: 0.25rem auto !important;
+    max-width: 200px !important;
+    text-align: center !important;
+  }
+}
+
+/* ================================================
+   END BADGE FIXES
+   ================================================ */
+
+/* ================================================
+   ADDITIONAL MOBILE RESPONSIVENESS IMPROVEMENTS
+   ================================================ */
+
+/* Improve sponsor section layout on mobile */
+@media (max-width: 768px) {
+  #sponsors .container {
+    padding: 0 1rem;
+  }
+  
+  .sponsor-logo-main img,
+  .sponsor-logo-secondary img {
+    border-radius: 8px;
+    background: white;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+/* Improve organizer logos on mobile */
+@media (max-width: 768px) {
+  #organizers .d-flex {
+    flex-direction: column !important;
+    gap: 1.5rem !important;
+  }
+  
+  .organizer-logo-horizontal {
+    max-width: 150px !important;
+  }
+  
+  .organizer-logo-square {
+    max-width: 60px !important;
+  }
+}
+
+/* Better mobile navigation behavior */
+@media (max-width: 991px) {
+  .navbar-nav {
+    background: rgba(255, 255, 255, 0.98);
+    border-radius: 12px;
+    margin-top: 1rem;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-link {
+    padding: 0.75rem 1rem !important;
+    margin: 0.25rem 0 !important;
+    border-radius: 8px !important;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-link:hover {
+    background: var(--primary-light) !important;
+    color: var(--primary) !important;
+  }
+}
+
+/* Improve hero section spacing on mobile */
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 0 60px !important;
+  }
+  
+  .hero-content {
+    padding: 0 1rem;
+  }
+  
+  .hero-detail-item {
+    justify-content: center !important;
+  }
+}
+
+/* Better section spacing on mobile */
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+  
+  section {
+    padding: 3rem 0 !important;
+  }
+  
+  .section-title {
+    margin-bottom: 2rem !important;
+  }
+}
+
+/* ================================================
+   END ADDITIONAL MOBILE IMPROVEMENTS
+   ================================================ */
+
+/* ================================================
+   SPEAKER CARDS AND GENERAL CARDS MOBILE FIXES
+   ================================================ */
+
+/* Improve speaker cards on mobile */
+@media (max-width: 768px) {
+  .speakers-row .col-md-6,
+  .speakers-row .col-lg-4 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .speaker-img {
+    width: 120px !important;
+    height: 120px !important;
+    margin: 1rem auto 1rem !important;
+  }
+  
+  .card-title {
+    font-size: 1.2rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  .card-text {
+    font-size: 0.95rem !important;
+    line-height: 1.5 !important;
+  }
+  
+  .text-muted {
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Improve key topics and audience cards on mobile */
+@media (max-width: 768px) {
+  .key-topic-card,
+  .audience-card {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .key-topic-icon-wrapper,
+  .audience-icon-wrapper {
+    width: 80px !important;
+    height: 80px !important;
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .key-topic-icon-wrapper i,
+  .audience-icon-wrapper i {
+    font-size: 1.8rem !important;
+  }
+}
+
+/* Better form styling on mobile */
+@media (max-width: 768px) {
+  .registration-form {
+    padding: 1.5rem 1rem !important;
+  }
+  
+  .form-label {
+    font-size: 0.9rem !important;
+    font-weight: 600 !important;
+  }
+  
+  .form-control,
+  .form-select {
+    font-size: 0.9rem !important;
+    padding: 0.75rem !important;
+  }
+  
+  .btn-lg {
+    padding: 0.75rem 1.5rem !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* ================================================
+   END SPEAKER CARDS AND GENERAL FIXES
+   ================================================ */
+
+/* ================================================
+   FINAL MOBILE UX IMPROVEMENTS
+   ================================================ */
+
+/* Add visual cues for horizontal scrolling */
+@media (max-width: 768px) {
+  .agenda-table-wrapper {
+    position: relative;
+  }
+  
+  .agenda-table-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 20px;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), transparent);
+    pointer-events: none;
+    z-index: 5;
+  }
+  
+  /* Add better scroll indicators */
+  .agenda-table-wrapper::after {
+    background: var(--primary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+}
+
+/* Improve mobile typography hierarchy */
+@media (max-width: 576px) {
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  
+  h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  h3 {
+    font-size: 1.4rem !important;
+  }
+  
+  h4 {
+    font-size: 1.2rem !important;
+  }
+  
+  h5 {
+    font-size: 1.1rem !important;
+  }
+  
+  .lead {
+    font-size: 1.1rem !important;
+  }
+  
+  p {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Ensure touch targets are large enough */
+@media (max-width: 768px) {
+  .btn {
+    min-height: 44px;
+    padding: 0.75rem 1.5rem;
+  }
+  
+  .nav-link {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+  }
+  
+  .badge {
+    min-height: 32px;
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+/* ================================================
+   END FINAL MOBILE UX IMPROVEMENTS
+   ================================================ */
